@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="Gradle: org.glassfish.hk2.external:aopalliance-repackaged:2.5.0-b36">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.glassfish.hk2.external/aopalliance-repackaged/2.5.0-b36/c070e06fddf05938328f4c9ad5c954127e1188ac/aopalliance-repackaged-2.5.0-b36.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.glassfish.hk2.external/aopalliance-repackaged/2.5.0-b36/c4f494a2a310a3502516566cf435cf494c0f958/aopalliance-repackaged-2.5.0-b36-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>
