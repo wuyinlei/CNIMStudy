@@ -13,14 +13,14 @@
     <session-factory>
         <!-- Database connection settings 数据库连接驱动-->
         <property name="connection.driver_class">com.mysql.cj.jdbc.Driver</property>
-        <!--<property name="connection.url">jdbc:mysql://127.0.0.1:3306/DB_I_T_PUSH?serverTimezone=UTC&amp;useUnicode=true&amp;characterEncoding=utf8&amp;useSSL=false</property>-->
-        <!--<property name="connection.username">root</property>-->
-        <!--<property name="connection.password">123456</property>-->
-        <!--本地地址-->
-        <property name="connection.url">jdbc:mysql://127.0.0.1:8080/DB_I_T_PUSH?serverTimezone=UTC&amp;useUnicode=true&amp;characterEncoding=utf8&amp;useSSL=false</property>
-        <!--<property name="connection.url">jdbc:mysql://qiujuer.net:6968/DB_I_T_PUSH?serverTimezone=UTC&amp;useUnicode=true&amp;characterEncoding=utf8&amp;useSSL=false</property>-->
+        <property name="connection.url">jdbc:mysql://127.0.0.1:3306/DB_I_T_PUSH?serverTimezone=UTC&amp;useUnicode=true&amp;characterEncoding=utf8&amp;useSSL=false</property>
         <property name="connection.username">root</property>
         <property name="connection.password">root</property>
+        <!--本地地址-->
+        <!--<property name="connection.url">jdbc:mysql://127.0.0.1:8080/DB_I_T_PUSH?serverTimezone=UTC&amp;useUnicode=true&amp;characterEncoding=utf8&amp;useSSL=false</property>-->
+        <!--&lt;!&ndash;<property name="connection.url">jdbc:mysql://qiujuer.net:6968/DB_I_T_PUSH?serverTimezone=UTC&amp;useUnicode=true&amp;characterEncoding=utf8&amp;useSSL=false</property>&ndash;&gt;-->
+        <!--<property name="connection.username">root</property>-->
+        <!--<property name="connection.password">root</property>-->
 
 
         <!-- JDBC connection pool (use the built-in) 连接池大小-->
@@ -48,9 +48,15 @@
         <property name="show_sql">true</property>
         <property name="format_sql">true</property>
 
+
+        <!--
+            create:  表示启动的时候先drop  在create
+            create-drop：也表示创建  只不过在系统关闭前执行一下drop
+            update: 这个操作启动的时候会去检查schema是否一致，如果不一致会做schema更新
+            validate： 启动时验证现有的schema与你配置的hibernate是否一致，如果不一致就会抛出异常  并不做更新
+        -->
         <!-- Drop and re-create the database schema on startup -->
         <property name="hbm2ddl.auto">update</property>
-
 
         <!--<mapping package="net.qiujuer.web.italker.push.bean.db"-->
                  <!--class="net.qiujuer.web.italker.push.bean.db.Group"/>-->
