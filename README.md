@@ -138,5 +138,35 @@ compile 'com.google.code.gson:gson:2.8.0'
 ```
 web.xml配置
 ```
+<?xml version="1.0" encoding="UTF-8"?>
 
+<web-app>
+
+    <display-name>CNIMStudy</display-name>
+
+    <servlet>
+        <servlet-name>ITalkerApiServlet</servlet-name>
+        <!--容器-->
+        <servlet-class>org.glassfish.jersey.servlet.ServletContainer</servlet-class>
+        <init-param>
+            <!--映射的包名 用于搜索处理-->
+            <param-name>jersey.config.server.provider.packages</param-name>
+            <param-value>com.mingchu.ruolan.push.service</param-value>
+        </init-param>
+        <init-param>
+            <param-name>javax.ws.rs.Application</param-name>
+            <param-value>com.mingchu.ruolan.push.Application</param-value>
+        </init-param>
+
+        <!--启动的时候是否加载  true-->
+        <load-on-startup>1</load-on-startup>
+    </servlet>
+
+    <!--映射-->
+    <servlet-mapping>
+        <servlet-name>ITalkerApiServlet</servlet-name>
+        <!--访问路径-->
+        <url-pattern>/api/*</url-pattern>
+    </servlet-mapping>
+</web-app>
 ```

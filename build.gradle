@@ -8,6 +8,10 @@ sourceCompatibility = 1.8
 
 repositories {
     mavenCentral()
+    maven {
+        name "getui-nexus"
+        url "http://mvn.gt.igexin.com/nexus/content/repositories/releases/"
+    }
 }
 
 dependencies {
