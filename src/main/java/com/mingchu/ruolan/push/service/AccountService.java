@@ -2,7 +2,6 @@ package com.mingchu.ruolan.push.service;
 
 import com.mingchu.ruolan.push.bean.User;
 
-import javax.jws.soap.SOAPBinding;
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 

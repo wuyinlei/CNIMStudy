@@ -2,11 +2,13 @@
 
 <web-app>
 
+    <!--定义项目的名称.-->
     <display-name>CNIMStudy</display-name>
 
     <servlet>
+        <!--定义Servlet的名称-->
         <servlet-name>ITalkerApiServlet</servlet-name>
-        <!--容器-->
+        <!--容器   -Servlet的类-->-->
         <servlet-class>org.glassfish.jersey.servlet.ServletContainer</servlet-class>
         <init-param>
             <!--映射的包名 用于搜索处理-->
@@ -25,7 +27,20 @@
     <!--映射-->
     <servlet-mapping>
         <servlet-name>ITalkerApiServlet</servlet-name>
-        <!--访问路径-->
+        <!--访问路径  定义Servlet所对应的RUL-->
         <url-pattern>/api/*</url-pattern>
     </servlet-mapping>
+
+    <welcome-file-list>
+        <welcome-file>index.jsp</welcome-file>
+    </welcome-file-list>
+
+    <!--<error-page>-->
+        <!--<error-code>404</error-code>-->
+        <!--<location>/error404.jsp</location>-->
+    <!--</error-page>-->
+    <!--<error-page>-->
+        <!--<exception-type>java.lang.Exception</exception-type>  &lt;!&ndash;一个完整名称的Java异常类型&ndash;&gt;-->
+        <!--<location>/except.jsp</location>  &lt;!&ndash;在web应用内的相关资源路径&ndash;&gt;-->
+    <!--</error-page>-->
 </web-app>
