@@ -6,6 +6,9 @@
 标签（空格分隔）： 开源项目 JAVA后台 Android前端
 
 ---
+##How to use this Project
+* https://github.com/wuyinlei/CNIMStudy/blob/master/src/main/file/how_to_use.md
+
 ###IM四大协议
 * IMPP：即时信息和空间协议
 * XMPP：可扩展通讯和表示协议
