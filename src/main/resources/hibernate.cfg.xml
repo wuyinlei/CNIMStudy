@@ -60,7 +60,7 @@
 
         <!--数据库操作映射到bean-->
         <mapping package="com.mingchu.ruolan.push.bean.db"
-                 class="com.mingchu.ruolan.push.bean.db.Message"/>
+                 class="com.mingchu.ruolan.push.bean.db.User"/>
 
     </session-factory>
 </hibernate-configuration>

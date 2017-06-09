@@ -76,6 +76,13 @@ public class User {
     //1 对多  一个用户可以有很多关注者  每一次关注都是一个记录
     private Set<UserFollow> followers = new HashSet<>();
 
+    //我们所创建的群  对应的字段为Group.ownerId
+    @JoinColumn(nullable = "ownerId")   //懒加载  加载用户信息的时候不加载这个集合
+    //当访问group.size的时候也是不加载   只有遍历集合的时候采取加载
+    @LazyCollection(LazyCollectionOption.EXTRA)  //懒加载集合  尽可能的不加载具体的数据
+    @OneToMany(fetch = FetchType.LAZY,cascade = CascadeType.ALL)
+    private Set<Group> groups = new HashSet<>();
+
     public String getId() {
         return id;
     }
@@ -187,5 +194,13 @@ public class User {
 
     public void setFollowers(Set<UserFollow> followers) {
         this.followers = followers;
+    }
+
+    public Set<Group> getGroups() {
+        return groups;
+    }
+
+    public void setGroups(Set<Group> groups) {
+        this.groups = groups;
     }
 }

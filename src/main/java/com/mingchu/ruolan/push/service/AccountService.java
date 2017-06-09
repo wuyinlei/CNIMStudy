@@ -1,6 +1,6 @@
 package com.mingchu.ruolan.push.service;
 
-import com.mingchu.ruolan.push.bean.User;
+import com.mingchu.ruolan.push.bean.db.User;
 
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
