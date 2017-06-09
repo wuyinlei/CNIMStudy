@@ -1,11 +1,14 @@
-package com.mingchu.ruolan.push.bean;
+package com.mingchu.ruolan.push.bean.db;
 
-import org.hibernate.annotations.CreationTimestamp;
-import org.hibernate.annotations.GenericGenerator;
-import org.hibernate.annotations.UpdateTimestamp;
+import org.hibernate.annotations.*;
 
 import javax.persistence.*;
+import javax.persistence.CascadeType;
+import javax.persistence.Entity;
+import javax.persistence.Table;
 import java.time.LocalDateTime;
+import java.util.HashSet;
+import java.util.Set;
 
 /**
  * Created by wuyinlei on 2017/6/4.
@@ -59,6 +62,19 @@ public class User {
     @Column(nullable = false)
     private LocalDateTime lastReceiveAt = LocalDateTime.now();  //最后一次接收到消息的时间
 
+    //我关注的人的列表方法
+    @JoinColumn(nullable = "originId") //对应的数据库表字段为TB_USER_FOLLOW.originId
+    @LazyCollection(LazyCollectionOption.EXTRA)  //定义为懒加载  默认加载User信息的时候  并不会查询这个集合
+    //1 对多  一个用户可以有很多关注
+    @OneToMany(fetch = FetchType.LAZY,cascade = CascadeType.ALL)
+    private Set<UserFollow> following = new HashSet<>();
+
+    //关注我的人的列表
+    @JoinColumn(nullable = "targetId") //对应的数据库表字段为TB_USER_FOLLOW.targetId
+    @LazyCollection(LazyCollectionOption.EXTRA)  //定义为懒加载  默认加载User信息的时候  并不会查询这个集合
+    @OneToMany(fetch = FetchType.LAZY,cascade = CascadeType.ALL)
+    //1 对多  一个用户可以有很多关注者  每一次关注都是一个记录
+    private Set<UserFollow> followers = new HashSet<>();
 
     public String getId() {
         return id;
@@ -154,5 +170,22 @@ public class User {
 
     public void setLastReceiveAt(LocalDateTime lastReceiveAt) {
         this.lastReceiveAt = lastReceiveAt;
+    }
+
+
+    public Set<UserFollow> getFollowing() {
+        return following;
+    }
+
+    public void setFollowing(Set<UserFollow> following) {
+        this.following = following;
+    }
+
+    public Set<UserFollow> getFollowers() {
+        return followers;
+    }
+
+    public void setFollowers(Set<UserFollow> followers) {
+        this.followers = followers;
     }
 }
