@@ -9,8 +9,10 @@ import java.util.logging.Logger;
 
 /**
  * Created by wuyinlei on 2017/6/4.
+ *
+ * @function 全局生命周期
  */
-public class Application extends ResourceConfig{
+public class Application extends ResourceConfig {
 
 
     public Application() {

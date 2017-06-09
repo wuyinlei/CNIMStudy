@@ -1,4 +1,4 @@
-package com.mingchu.ruolan.push.bean;
+package com.mingchu.ruolan.push.bean.db;
 
 /**
  * Created by wuyinlei on 2017/6/9.

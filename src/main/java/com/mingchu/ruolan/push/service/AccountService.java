@@ -7,6 +7,8 @@ import javax.ws.rs.core.MediaType;
 
 /**
  * Created by wuyinlei on 2017/6/4.
+ *
+ * @function
  */
 // 127.0.0.1/api/account/...
 @Path("/account")
