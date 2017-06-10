@@ -37,6 +37,8 @@ public class UserFollow {
     @ManyToOne(optional = false)   //多对一   你可以被很多人关注
     @JoinColumn(name = "targetId")  //对应的是User.id
     private User target;
+
+    @Column(nullable = false, updatable = false, insertable = false)
     private String targetId;  //不允许为空 不允许更新  不允许插入
 
     //别名也就是对target的备注  可以为null
