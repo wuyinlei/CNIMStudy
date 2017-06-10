@@ -5,29 +5,24 @@ import com.google.gson.annotations.Expose;
 
 /**
  * Created by wuyinlei on 2017/6/10.
- *
- * @function 注册Model
  */
-public class RegisterModel {
+public class LoginModel {
 
     @Expose
     private String account;  //账户
     @Expose
     private String password;  //秘密吗
-    @Expose
-    private String name;  //名字
 
     /**
      * 校验
-     * @param model  RegisterModel
+     * @param model  LoginModel
      * @return  false  true
      */
-    public static boolean check(RegisterModel model) {
+    public static boolean check(LoginModel model) {
 
         return model != null
                 && Strings.isNullOrEmpty(model.account)
-                && Strings.isNullOrEmpty(model.password)
-                && Strings.isNullOrEmpty(model.name);
+                && Strings.isNullOrEmpty(model.password);
     }
 
     public String getAccount() {
@@ -44,14 +39,6 @@ public class RegisterModel {
 
     public void setPassword(String password) {
         this.password = password;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
     }
 
 }

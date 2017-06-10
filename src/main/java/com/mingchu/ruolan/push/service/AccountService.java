@@ -1,9 +1,9 @@
 package com.mingchu.ruolan.push.service;
 
 import com.mingchu.ruolan.push.bean.api.account.AccountRspModel;
+import com.mingchu.ruolan.push.bean.api.account.LoginModel;
 import com.mingchu.ruolan.push.bean.api.account.RegisterModel;
 import com.mingchu.ruolan.push.bean.api.base.ResponseModel;
-import com.mingchu.ruolan.push.bean.card.UserCard;
 import com.mingchu.ruolan.push.bean.db.User;
 import com.mingchu.ruolan.push.factory.UserFactory;
 
@@ -21,11 +21,34 @@ public class AccountService {
 
 
     @POST
+    @Path("/login")  //注册接口
+    @Consumes(MediaType.APPLICATION_JSON)  //指定请求返回的响应体为JSON
+    @Produces(MediaType.APPLICATION_JSON)
+    //127.0.0.1/api/account/login
+    public ResponseModel<AccountRspModel> login(LoginModel model) {
+
+        if (LoginModel.check(model))  //如果校验不成功  返回参数异常
+            return ResponseModel.buildParameterError();
+
+        User user = UserFactory.login(model.getAccount(), model.getPassword());
+        if (user != null) {
+            AccountRspModel accountRspModel = new AccountRspModel(user);
+            return ResponseModel.buildOk(accountRspModel);
+        } else {
+            return ResponseModel.buildLoginError();
+        }
+
+    }
+
+    @POST
     @Path("/register")  //注册接口
     @Consumes(MediaType.APPLICATION_JSON)  //指定请求返回的响应体为JSON
     @Produces(MediaType.APPLICATION_JSON)
     //127.0.0.1/api/account/login
     public ResponseModel<AccountRspModel> register(RegisterModel model) {
+
+        if (RegisterModel.check(model))
+            return ResponseModel.buildParameterError();
 
         User user = UserFactory.findByPhone(model.getName());
 
