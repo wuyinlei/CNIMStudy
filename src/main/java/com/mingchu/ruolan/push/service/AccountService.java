@@ -18,7 +18,7 @@ import javax.ws.rs.core.MediaType;
  */
 // 127.0.0.1/api/account/...
 @Path("/account")
-public class AccountService {
+public class AccountService extends BaseService {
 
 
     /**
@@ -56,7 +56,7 @@ public class AccountService {
         if (user != null) {
             //如果已经携带了pushId
             if (!Strings.isNullOrEmpty(model.getPushId())) {
-                return bind(user,model.getPushId());
+                return bind(user, model.getPushId());
             }
 
             AccountRspModel accountRspModel = new AccountRspModel(user);
@@ -95,7 +95,7 @@ public class AccountService {
         if (user != null) {
             //如果已经携带了pushId
             if (!Strings.isNullOrEmpty(model.getPassword())) {
-                return bind(user,model.getPushId());
+                return bind(user, model.getPushId());
             }
 
             AccountRspModel accountRspModel = new AccountRspModel(user);
@@ -119,16 +119,10 @@ public class AccountService {
         }
 
         //拿到自己的个人信息
-        User user = UserFactory.findByToken(token);
+        User user = getSelf();
 
-        if (user != null) {
-            //进行设备绑定的操作
-            return bind(user, pushId);
-
-        } else {
-            //Token失效  所有进行都无法正常进行
-            return ResponseModel.buildAccountError();
-        }
+        //进行设备绑定的操作
+        return bind(user, pushId);
 
     }
 

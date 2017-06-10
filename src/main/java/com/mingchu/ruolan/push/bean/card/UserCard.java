@@ -34,6 +34,15 @@ public class UserCard {
     private boolean isFollow;  //我当前User的关系状态 是否已经关注了这个人
 
     public UserCard(User user) {
+       this(user,false);
+        // TODO: 2017/6/10   得打关注人和粉丝的数量
+//        user.getFollowers().size();
+         //懒加载会报错  因为没有Session
+
+    }
+
+    public UserCard(User user,boolean isFollow) {
+        this.isFollow = isFollow;
         this.id = user.getId();
         this.name = user.getName();
         this.phone = user.getPhone();
@@ -45,7 +54,7 @@ public class UserCard {
 
         // TODO: 2017/6/10   得打关注人和粉丝的数量
 //        user.getFollowers().size();
-         //懒加载会报错  因为没有Session
+        //懒加载会报错  因为没有Session
 
     }
 

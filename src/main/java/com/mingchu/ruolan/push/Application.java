@@ -1,6 +1,7 @@
 package com.mingchu.ruolan.push;
 
 import com.fasterxml.jackson.jaxrs.json.JacksonJaxbJsonProvider;
+import com.mingchu.ruolan.push.provider.AuthRequestFilter;
 import com.mingchu.ruolan.push.provider.GsonProvider;
 import com.mingchu.ruolan.push.service.AccountService;
 import com.sun.tools.javac.util.Log;
@@ -22,6 +23,9 @@ public class Application extends ResourceConfig {
         packages(AccountService.class.getPackage().getName());
 
         System.out.println("到这了");
+
+        //注册拦截器
+        register(AuthRequestFilter.class);
 
         //注册Json转换器
         register(GsonProvider.class);   //替换解析器为Gson

@@ -6,6 +6,7 @@ import com.mingchu.ruolan.push.utils.Hib;
 import com.mingchu.ruolan.push.utils.TextUtil;
 import org.hibernate.Session;
 
+import javax.jws.soap.SOAPBinding;
 import java.util.List;
 import java.util.UUID;
 
@@ -53,6 +54,19 @@ public class UserFactory {
     }
 
     /**
+     * 更新到数据库
+     *
+     * @param user user
+     * @return user
+     */
+    public static User update(User user) {
+        return Hib.query(session -> {
+            session.saveOrUpdate(user);
+            return user;
+        });
+    }
+
+    /**
      * 给当前的账户绑定pushId
      *
      * @param user   自己的USER
@@ -64,39 +78,36 @@ public class UserFactory {
         if (Strings.isNullOrEmpty(pushId))
             return null;
         String id
-                 = user.getId();
-            //第一步  查询是否有其他账号绑定了当前id
-            //取消绑定 避免推送混乱  //查询的列表不能包括自己
-            Hib.queryOnly(session -> {
-                @SuppressWarnings("uncheced")
-                List<User> userList =(List<User>) session.createQuery("from User" +
-                        " where lower(pushId)=:pushId and" +
-                        "id!=:userId")
-                        .setParameter("pushId",pushId.toLowerCase())
-                        .setParameter("userId",id)
-                        .list();
+                = user.getId();
+        //第一步  查询是否有其他账号绑定了当前id
+        //取消绑定 避免推送混乱  //查询的列表不能包括自己
+        Hib.queryOnly(session -> {
+            @SuppressWarnings("uncheced")
+            List<User> userList = (List<User>) session.createQuery("from User" +
+                    " where lower(pushId)=:pushId and" +
+                    "id!=:userId")
+                    .setParameter("pushId", pushId.toLowerCase())
+                    .setParameter("userId", id)
+                    .list();
 
-                for (User u : userList) {
-                    u.setPushId(null);  //设置pushId为null
-                    session.saveOrUpdate(u);  //更新
-                }
-            });
-
-            if (pushId.equalsIgnoreCase(user.getPushId())){
-                return user;  //如果当前需要绑定的设备id  之前已经绑定过了   那么就不需要额外的绑定
-            } else {
-                //如果当前账户的之前的设备id  和需要绑定的不同   那么 需要单点登录
-                // 让之前的设备退出账户  给之前的设备推送一条退出消息  todo  推送的退出消息
-                if (Strings.isNullOrEmpty(user.getPushId())){
-
-                }
-                //更新新的设备id
-                user.setPushId(pushId);
-                return Hib.query(session -> {
-                    session.saveOrUpdate(user);
-                    return user;
-                });
+            for (User u : userList) {
+                u.setPushId(null);  //设置pushId为null
+                session.saveOrUpdate(u);  //更新
             }
+        });
+
+        if (pushId.equalsIgnoreCase(user.getPushId())) {
+            return user;  //如果当前需要绑定的设备id  之前已经绑定过了   那么就不需要额外的绑定
+        } else {
+            //如果当前账户的之前的设备id  和需要绑定的不同   那么 需要单点登录
+            // 让之前的设备退出账户  给之前的设备推送一条退出消息  todo  推送的退出消息
+            if (Strings.isNullOrEmpty(user.getPushId())) {
+
+            }
+            //更新新的设备id
+            user.setPushId(pushId);
+            return update(user);
+        }
     }
 
 
@@ -181,11 +192,9 @@ public class UserFactory {
         user.setToken(newToken);
 
         //
-        return Hib.query(session -> {
-            session.saveOrUpdate(user);
-            return user;
-        });
+        return update(user);
     }
+
 
     /**
      * 密码进行加密
@@ -200,5 +209,6 @@ public class UserFactory {
 
         return TextUtil.encodeBase64(password);  //在进行一次对称的Base64加密  当然也可以采取加盐的方法
     }
+
 
 }
