@@ -94,7 +94,7 @@ public class AccountService extends BaseService {
 
         if (user != null) {
             //如果已经携带了pushId
-            if (!Strings.isNullOrEmpty(model.getPassword())) {
+            if (!Strings.isNullOrEmpty(model.getPushId())) {
                 return bind(user, model.getPushId());
             }
 

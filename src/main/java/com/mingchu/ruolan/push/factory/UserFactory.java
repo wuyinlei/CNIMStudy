@@ -175,7 +175,10 @@ public class UserFactory {
 
         //数据库存储
         return Hib.query(session ->
-                (User) session.save(user)
+                {
+                    session.save(user);
+                    return user;
+                }
         );
     }
 
