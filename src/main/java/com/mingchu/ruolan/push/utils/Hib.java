@@ -106,6 +106,10 @@ public class Hib {
         return t;
     }
 
+    /**
+     * 就仅仅查询 不需要返回
+     * @param result
+     */
     public static void queryOnly(QueryOnly result) {
         Session session = sessionFactory.openSession();
         Transaction transaction = session.beginTransaction();
@@ -124,10 +128,15 @@ public class Hib {
         }
     }
 
+    /**
+     * 用户的实际操作的一个接口  有返回值
+     * @param <T>
+     */
     public interface QueryResult<T> {
         T query(Session session);
     }
 
+    //无返回值
     public interface QueryOnly {
         void query(Session session);
     }

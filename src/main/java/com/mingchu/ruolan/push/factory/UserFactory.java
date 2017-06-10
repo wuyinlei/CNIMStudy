@@ -13,6 +13,30 @@ import org.hibernate.Session;
 public class UserFactory {
 
     /**
+     * 根据手机号进行查询操作
+     * @param phone  手机号
+     * @return User
+     */
+    public static User findByPhone(String phone){
+        return Hib.query(session -> (User) session.createQuery("from User where phone =:inPhone")
+                .setParameter("inPhone",phone)
+                .uniqueResult());
+    }
+
+    /**
+     * 根据手机号进行查询操作
+     * @param name  手机号
+     * @return User
+     */
+    public static User findByName(String name){
+        return Hib.query(session -> (User) session.createQuery("from User where name =:inName")
+                .setParameter("inName",name)
+                .uniqueResult());
+    }
+
+
+
+    /**
      * 用户注册的操作  需要写入数据库  并且返回数据库中的User信息
      *
      * @param account  账户

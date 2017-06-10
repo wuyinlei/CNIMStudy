@@ -1,6 +1,8 @@
 package com.mingchu.ruolan.push.service;
 
+import com.mingchu.ruolan.push.bean.api.account.AccountRspModel;
 import com.mingchu.ruolan.push.bean.api.account.RegisterModel;
+import com.mingchu.ruolan.push.bean.api.base.ResponseModel;
 import com.mingchu.ruolan.push.bean.card.UserCard;
 import com.mingchu.ruolan.push.bean.db.User;
 import com.mingchu.ruolan.push.factory.UserFactory;
@@ -23,22 +25,28 @@ public class AccountService {
     @Consumes(MediaType.APPLICATION_JSON)  //指定请求返回的响应体为JSON
     @Produces(MediaType.APPLICATION_JSON)
     //127.0.0.1/api/account/login
-    public UserCard register(RegisterModel model) {
+    public ResponseModel<AccountRspModel> register(RegisterModel model) {
 
-        User user = UserFactory.register(model.getAccount(),
+        User user = UserFactory.findByPhone(model.getName());
+
+        if (user != null) {
+            return ResponseModel.buildHaveNameError();
+        }
+
+        user = UserFactory.findByPhone(model.getAccount());
+        if (user != null) {
+            return ResponseModel.buildHaveAccountError();
+        }
+
+        //开始注册逻辑
+        user = UserFactory.register(model.getAccount(),
                 model.getPassword(), model.getName());
 
         if (user != null) {
-            UserCard card = new UserCard();
-            card.setName(user.getName());
-            card.setPhone(user.getPhone());
-            card.setSex(user.getSex());
-            card.setIsFollow(true);  //自己本身已经关注
-            card.setModifyAt(user.getUpdateAt());
-            return card;
+            AccountRspModel accountRspModel = new AccountRspModel(user);
+            return ResponseModel.buildOk(accountRspModel);
+        } else {
+            return ResponseModel.buildRegisterError();
         }
-        return null;  //这里如果直接返回 是错误的  没有指定返回的类型 xml  gson
     }
-
-
 }

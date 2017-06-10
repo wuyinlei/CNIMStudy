@@ -1,6 +1,7 @@
 package com.mingchu.ruolan.push.bean.card;
 
 import com.google.gson.annotations.Expose;
+import com.mingchu.ruolan.push.bean.db.User;
 
 import java.time.LocalDateTime;
 
@@ -31,6 +32,22 @@ public class UserCard {
     private LocalDateTime modifyAt;  //用户最后登录的更新时间
     @Expose
     private boolean isFollow;  //我当前User的关系状态 是否已经关注了这个人
+
+    public UserCard(User user) {
+        this.id = user.getId();
+        this.name = user.getName();
+        this.phone = user.getPhone();
+        this.password = user.getPassword();
+        this.portrait = user.getPortrait();
+        this.desc = user.getDescription();
+        this.sex = user.getSex();
+        this.modifyAt = user.getUpdateAt();
+
+        // TODO: 2017/6/10   得打关注人和粉丝的数量
+//        user.getFollowers().size();
+         //懒加载会报错  因为没有Session
+
+    }
 
     public String getId() {
         return id;
