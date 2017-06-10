@@ -13,7 +13,7 @@
     <session-factory>
         <!-- Database connection settings 数据库连接驱动-->
         <property name="connection.driver_class">com.mysql.cj.jdbc.Driver</property>
-        <property name="connection.url">jdbc:mysql://127.0.0.1:3306/DB_I_T_PUSH?serverTimezone=UTC&amp;useUnicode=true&amp;characterEncoding=utf8&amp;useSSL=false</property>
+        <property name="connection.url">jdbc:mysql://localhost:3306/DB_IM_PUSH?serverTimezone=UTC&amp;useUnicode=true&amp;characterEncoding=utf8&amp;useSSL=false</property>
         <property name="connection.username">root</property>
         <property name="connection.password">root</property>
         <!--本地地址-->

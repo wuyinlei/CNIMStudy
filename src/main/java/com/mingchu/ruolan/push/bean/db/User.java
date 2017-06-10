@@ -63,25 +63,31 @@ public class User {
     private LocalDateTime lastReceiveAt = LocalDateTime.now();  //最后一次接收到消息的时间
 
     //我关注的人的列表方法
-    @JoinColumn(nullable = "originId") //对应的数据库表字段为TB_USER_FOLLOW.originId
+    @JoinColumn(name = "originId") //对应的数据库表字段为TB_USER_FOLLOW.originId
     @LazyCollection(LazyCollectionOption.EXTRA)  //定义为懒加载  默认加载User信息的时候  并不会查询这个集合
     //1 对多  一个用户可以有很多关注
     @OneToMany(fetch = FetchType.LAZY,cascade = CascadeType.ALL)
     private Set<UserFollow> following = new HashSet<>();
 
     //关注我的人的列表
-    @JoinColumn(nullable = "targetId") //对应的数据库表字段为TB_USER_FOLLOW.targetId
+    @JoinColumn(name = "targetId") //对应的数据库表字段为TB_USER_FOLLOW.targetId
     @LazyCollection(LazyCollectionOption.EXTRA)  //定义为懒加载  默认加载User信息的时候  并不会查询这个集合
     @OneToMany(fetch = FetchType.LAZY,cascade = CascadeType.ALL)
     //1 对多  一个用户可以有很多关注者  每一次关注都是一个记录
     private Set<UserFollow> followers = new HashSet<>();
 
     //我们所创建的群  对应的字段为Group.ownerId
-    @JoinColumn(nullable = "ownerId")   //懒加载  加载用户信息的时候不加载这个集合
+    @JoinColumn(name = "ownerId")   //懒加载  加载用户信息的时候不加载这个集合
     //当访问group.size的时候也是不加载   只有遍历集合的时候采取加载
     @LazyCollection(LazyCollectionOption.EXTRA)  //懒加载集合  尽可能的不加载具体的数据
     @OneToMany(fetch = FetchType.LAZY,cascade = CascadeType.ALL)
     private Set<Group> groups = new HashSet<>();
+
+    // 我发送的消息记录
+    @OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    @JoinColumn(name = "receiverId")
+    private Set<PushHistory> receivePushHistories = new HashSet<>();
+
 
     public String getId() {
         return id;

@@ -1,6 +1,7 @@
 package com.mingchu.ruolan.push;
 
 import com.fasterxml.jackson.jaxrs.json.JacksonJaxbJsonProvider;
+import com.mingchu.ruolan.push.provider.GsonProvider;
 import com.mingchu.ruolan.push.service.AccountService;
 import com.sun.tools.javac.util.Log;
 import org.glassfish.jersey.server.ResourceConfig;
@@ -23,7 +24,8 @@ public class Application extends ResourceConfig {
         System.out.println("到这了");
 
         //注册Json转换器
-        register(JacksonJaxbJsonProvider.class);
+        register(GsonProvider.class);   //替换解析器为Gson
+//        register(JacksonJaxbJsonProvider.class);
 
         //注册日志打印输出
         register(Logger.class);
