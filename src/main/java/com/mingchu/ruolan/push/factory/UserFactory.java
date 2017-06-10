@@ -1,10 +1,12 @@
 package com.mingchu.ruolan.push.factory;
 
+import com.google.common.base.Strings;
 import com.mingchu.ruolan.push.bean.db.User;
 import com.mingchu.ruolan.push.utils.Hib;
 import com.mingchu.ruolan.push.utils.TextUtil;
 import org.hibernate.Session;
 
+import java.util.List;
 import java.util.UUID;
 
 /**
@@ -50,6 +52,53 @@ public class UserFactory {
                 .uniqueResult());
     }
 
+    /**
+     * 给当前的账户绑定pushId
+     *
+     * @param user   自己的USER
+     * @param pushId 自己的设备id
+     * @return User
+     */
+    public static User bindPushId(User user, String pushId) {
+
+        if (Strings.isNullOrEmpty(pushId))
+            return null;
+        String id
+                 = user.getId();
+            //第一步  查询是否有其他账号绑定了当前id
+            //取消绑定 避免推送混乱  //查询的列表不能包括自己
+            Hib.queryOnly(session -> {
+                @SuppressWarnings("uncheced")
+                List<User> userList =(List<User>) session.createQuery("from User" +
+                        " where lower(pushId)=:pushId and" +
+                        "id!=:userId")
+                        .setParameter("pushId",pushId.toLowerCase())
+                        .setParameter("userId",id)
+                        .list();
+
+                for (User u : userList) {
+                    u.setPushId(null);  //设置pushId为null
+                    session.saveOrUpdate(u);  //更新
+                }
+            });
+
+            if (pushId.equalsIgnoreCase(user.getPushId())){
+                return user;  //如果当前需要绑定的设备id  之前已经绑定过了   那么就不需要额外的绑定
+            } else {
+                //如果当前账户的之前的设备id  和需要绑定的不同   那么 需要单点登录
+                // 让之前的设备退出账户  给之前的设备推送一条退出消息  todo  推送的退出消息
+                if (Strings.isNullOrEmpty(user.getPushId())){
+
+                }
+                //更新新的设备id
+                user.setPushId(pushId);
+                return Hib.query(session -> {
+                    session.saveOrUpdate(user);
+                    return user;
+                });
+            }
+    }
+
 
     /**
      * 用户注册的操作  需要写入数据库  并且返回数据库中的User信息
@@ -92,7 +141,7 @@ public class UserFactory {
                         .setParameter("password", encodePassword)
                         .uniqueResult());
         if (user != null)
-             //对user进行登录操作  更新Token
+            //对user进行登录操作  更新Token
             user = login(user);
         return user;
     }

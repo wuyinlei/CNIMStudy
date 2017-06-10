@@ -1,5 +1,6 @@
 package com.mingchu.ruolan.push.service;
 
+import com.google.common.base.Strings;
 import com.mingchu.ruolan.push.bean.api.account.AccountRspModel;
 import com.mingchu.ruolan.push.bean.api.account.LoginModel;
 import com.mingchu.ruolan.push.bean.api.account.RegisterModel;
@@ -20,6 +21,27 @@ import javax.ws.rs.core.MediaType;
 public class AccountService {
 
 
+    /**
+     * 绑定的操作
+     *
+     * @param self   自己
+     * @param pushId pushId
+     * @return user
+     */
+    private static ResponseModel<AccountRspModel> bind(User self, String pushId) {
+        //进行设备绑定的操作
+        self = UserFactory.bindPushId(self, pushId);
+        if (self == null) {
+            return ResponseModel.buildServiceError();
+        }
+
+        //返回当前的账户   并且已经绑定了设备id
+        AccountRspModel accountRspModel = new AccountRspModel(self, true);
+        return ResponseModel.buildOk(accountRspModel);
+
+
+    }
+
     @POST
     @Path("/login")  //注册接口
     @Consumes(MediaType.APPLICATION_JSON)  //指定请求返回的响应体为JSON
@@ -32,6 +54,11 @@ public class AccountService {
 
         User user = UserFactory.login(model.getAccount(), model.getPassword());
         if (user != null) {
+            //如果已经携带了pushId
+            if (!Strings.isNullOrEmpty(model.getPushId())) {
+                return bind(user,model.getPushId());
+            }
+
             AccountRspModel accountRspModel = new AccountRspModel(user);
             return ResponseModel.buildOk(accountRspModel);
         } else {
@@ -66,10 +93,44 @@ public class AccountService {
                 model.getPassword(), model.getName());
 
         if (user != null) {
+            //如果已经携带了pushId
+            if (!Strings.isNullOrEmpty(model.getPassword())) {
+                return bind(user,model.getPushId());
+            }
+
             AccountRspModel accountRspModel = new AccountRspModel(user);
             return ResponseModel.buildOk(accountRspModel);
         } else {
             return ResponseModel.buildRegisterError();
         }
     }
+
+    //绑定推送id
+    @POST
+    @Path("/bind/{pushId}")  //绑定
+    @Consumes(MediaType.APPLICATION_JSON)  //指定请求返回的响应体为JSONd
+    @Produces(MediaType.APPLICATION_JSON)
+    //127.0.0.1/api/account/login   //从请求头中获取token字段  pushId从Url地址中获取
+    public ResponseModel<AccountRspModel> bind(@HeaderParam("token") String token,
+                                               @PathParam("pushId") String pushId) {
+
+        if (Strings.isNullOrEmpty(token) || Strings.isNullOrEmpty(pushId)) {
+            return ResponseModel.buildParameterError();
+        }
+
+        //拿到自己的个人信息
+        User user = UserFactory.findByToken(token);
+
+        if (user != null) {
+            //进行设备绑定的操作
+            return bind(user, pushId);
+
+        } else {
+            //Token失效  所有进行都无法正常进行
+            return ResponseModel.buildAccountError();
+        }
+
+    }
+
+
 }

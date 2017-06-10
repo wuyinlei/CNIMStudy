@@ -13,6 +13,8 @@ public class LoginModel {
     @Expose
     private String password;  //秘密吗
 
+    @Expose
+    private String pushId;
     /**
      * 校验
      * @param model  LoginModel
@@ -41,4 +43,11 @@ public class LoginModel {
         this.password = password;
     }
 
+    public String getPushId() {
+        return pushId;
+    }
+
+    public void setPushId(String pushId) {
+        this.pushId = pushId;
+    }
 }

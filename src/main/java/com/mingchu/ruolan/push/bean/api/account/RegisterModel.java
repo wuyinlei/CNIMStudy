@@ -17,6 +17,9 @@ public class RegisterModel {
     @Expose
     private String name;  //名字
 
+    @Expose
+    private String pushId;
+
     /**
      * 校验
      * @param model  RegisterModel
@@ -52,6 +55,14 @@ public class RegisterModel {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public String getPushId() {
+        return pushId;
+    }
+
+    public void setPushId(String pushId) {
+        this.pushId = pushId;
     }
 
 }
