@@ -303,4 +303,27 @@ public class UserFactory {
     }
 
 
+    /**
+     * 搜索联系人
+     *
+     * @param name 搜索联系人的名字
+     * @return 找到的联系人
+     */
+    public static List<User> search(String name) {
+
+        if (Strings.isNullOrEmpty(name))
+            name = "";//保证不能为null的情况
+        final String searchName = "%" + name + "%"; //模糊匹配
+
+        return Hib.query(session -> {
+
+           return session.createQuery("from User where lower(name) like :name and portrait is not null and description is" +
+                   " not  null ")
+                   .setParameter("name",searchName)
+                   .setMaxResults(20)  //返回20条
+                   .list();
+
+        });
+
+    }
 }
