@@ -100,7 +100,7 @@ public class UserService extends BaseService {
 
     //获取某人的信息
     @GET
-    @Path("/{id}}")
+    @Path("/{id}")
     @Consumes(MediaType.APPLICATION_JSON)  //指定请求返回的响应体为JSON
     @Produces(MediaType.APPLICATION_JSON)
     public ResponseModel<UserCard> getUser(@PathParam("id") String userId) {
@@ -130,7 +130,7 @@ public class UserService extends BaseService {
 
     //搜索人的接口实现
     @GET  //不涉及数据更改  只是查询数据库
-    @Path("/search/{name:(.*)}?")  //名字是任意字符 可以为空
+    @Path("/search/{name:(.*)?}")  //名字是任意字符 可以为空
     @Consumes(MediaType.APPLICATION_JSON)  //指定请求返回的响应体为JSON
     @Produces(MediaType.APPLICATION_JSON)
     public ResponseModel<List<UserCard>> searchUser(@DefaultValue("") @PathParam("name") String name){

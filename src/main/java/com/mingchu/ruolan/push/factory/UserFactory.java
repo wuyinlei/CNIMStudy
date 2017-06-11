@@ -274,9 +274,10 @@ public class UserFactory {
             originFollow.setTarget(target);
             originFollow.setAlias(alias);
 
+            //发起者是被关注的   我是被关注的
             UserFollow targetFollow = new UserFollow();
-            targetFollow.setOrigin(origin);
-            targetFollow.setTarget(target);
+            targetFollow.setOrigin(target);
+            targetFollow.setTarget(origin);
 
             //保存操作
             session.saveOrUpdate(originFollow);
@@ -298,6 +299,7 @@ public class UserFactory {
         return Hib.query((Session session) -> (UserFollow) session.createQuery("from UserFollow where originId=:originId and targetId=:targetId ")
                 .setParameter("originId", origin.getId())
                 .setParameter("targetId", target.getId())
+                .setMaxResults(1)  //设置最大返回是1
                 //查询一条数据
                 .uniqueResult());
     }
@@ -311,19 +313,11 @@ public class UserFactory {
      */
     public static List<User> search(String name) {
 
-        if (Strings.isNullOrEmpty(name))
-            name = "";//保证不能为null的情况
-        final String searchName = "%" + name + "%"; //模糊匹配
-
-        return Hib.query(session -> {
-
-           return session.createQuery("from User where lower(name) like :name and portrait is not null and description is" +
-                   " not  null ")
-                   .setParameter("name",searchName)
-                   .setMaxResults(20)  //返回20条
-                   .list();
-
-        });
+        return Hib.query(session -> (List<User>) session
+                .createQuery("from User as u where u.portrait is not null and u.description is not null and lower(u.name) like :name")
+                .setParameter("name", "%" + (Strings.isNullOrEmpty(name) ? "" : name.toLowerCase()) + "%")
+                .setMaxResults(20)
+                .list());
 
     }
 }
