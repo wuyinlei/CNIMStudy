@@ -2,13 +2,16 @@ package com.mingchu.ruolan.push.factory;
 
 import com.google.common.base.Strings;
 import com.mingchu.ruolan.push.bean.db.User;
+import com.mingchu.ruolan.push.bean.db.UserFollow;
 import com.mingchu.ruolan.push.utils.Hib;
 import com.mingchu.ruolan.push.utils.TextUtil;
 import org.hibernate.Session;
 
 import javax.jws.soap.SOAPBinding;
 import java.util.List;
+import java.util.Set;
 import java.util.UUID;
+import java.util.stream.Collectors;
 
 /**
  * Created by wuyinlei on 2017/6/10.
@@ -40,6 +43,18 @@ public class UserFactory {
                 .setParameter("inName", name)
                 .uniqueResult());
     }
+
+    /**
+     * 根据手机号进行查询操作
+     *
+     * @param userId 手机号
+     * @return User
+     */
+    public static User findById(String userId) {
+        //通过id查询更加方便
+        return Hib.query(session -> session.get(User.class, userId));
+    }
+
 
     /**
      * 根据Token进行查询操作  只能自己查询  只能自己使用  非他人的信息
@@ -77,8 +92,7 @@ public class UserFactory {
 
         if (Strings.isNullOrEmpty(pushId))
             return null;
-        String id
-                = user.getId();
+        String id = user.getId();
         //第一步  查询是否有其他账号绑定了当前id
         //取消绑定 避免推送混乱  //查询的列表不能包括自己
         Hib.queryOnly(session -> {
@@ -211,6 +225,81 @@ public class UserFactory {
         password = TextUtil.getMD5(password);
 
         return TextUtil.encodeBase64(password);  //在进行一次对称的Base64加密  当然也可以采取加盐的方法
+    }
+
+
+    /**
+     * 查询联系人
+     *
+     * @return 联系人的列表
+     */
+    public static List<User> contacts(User self) {
+        return Hib.query(session -> {
+            //重新加载一次用户信息 到self中  和当前的session绑定
+            session.load(self, self.getId());
+            //获取我关注的人
+            Set<UserFollow> follows = self.getFollowers();
+
+            //使用Java8简写方法
+            return follows.stream()
+                    .map(flow -> flow.getTarget()).collect(Collectors.toList());
+
+        });
+    }
+
+
+    /**
+     * 关注人的操作
+     *
+     * @param origin 发起者
+     * @param target 被关注的人
+     * @param alias  备注名
+     * @return 被关注的人
+     */
+    public static User follow(final User origin, final User target, final String alias) {
+        UserFollow userFollow = getUserFollow(origin, target);
+        if (userFollow != null) {
+            //已经关注  直接返回
+            return userFollow.getTarget();
+        }
+
+        return Hib.query(session -> {
+            //想要重新操作懒加载的数据  需要重新load一次
+            session.load(origin, origin.getId());
+            session.load(target, target.getId());
+
+            //我关注人的时候   同时他也关注我  所以需要添加两条数据
+            UserFollow originFollow = new UserFollow();
+            originFollow.setOrigin(origin);
+            originFollow.setTarget(target);
+            originFollow.setAlias(alias);
+
+            UserFollow targetFollow = new UserFollow();
+            targetFollow.setOrigin(origin);
+            targetFollow.setTarget(target);
+
+            //保存操作
+            session.saveOrUpdate(originFollow);
+            session.saveOrUpdate(targetFollow);
+
+            return target;
+
+        });
+    }
+
+    /**
+     * 查询两个人是否已经关注
+     *
+     * @param origin 发起者
+     * @param target 被关注人
+     * @return UserFollow  中间类
+     */
+    public static UserFollow getUserFollow(final User origin, final User target) {
+        return Hib.query((Session session) -> (UserFollow) session.createQuery("from UserFollow where originId=:originId and targetId=:targetId ")
+                .setParameter("originId", origin.getId())
+                .setParameter("targetId", target.getId())
+                //查询一条数据
+                .uniqueResult());
     }
 
 
