@@ -13,7 +13,7 @@
     <session-factory>
         <!-- Database connection settings 数据库连接驱动-->
         <property name="connection.driver_class">com.mysql.cj.jdbc.Driver</property>
-        <property name="connection.url">jdbc:mysql://127.0.0.1:3306/DB_I_T_PUSH?serverTimezone=UTC&amp;useUnicode=true&amp;characterEncoding=utf8&amp;useSSL=false</property>
+        <property name="connection.url">jdbc:mysql://127.0.0.1:3306/DB_IM_PUSH?serverTimezone=UTC&amp;useUnicode=true&amp;characterEncoding=utf8&amp;useSSL=false</property>
         <property name="connection.username">root</property>
         <property name="connection.password">root</property>
         <!--本地地址-->
@@ -58,19 +58,25 @@
         <!-- Drop and re-create the database schema on startup -->
         <property name="hbm2ddl.auto">update</property>
 
-        <!--<mapping package="net.qiujuer.web.italker.push.bean.db"-->
-                 <!--class="net.qiujuer.web.italker.push.bean.db.Group"/>-->
-        <!--<mapping package="net.qiujuer.web.italker.push.bean.db"-->
-                 <!--class="net.qiujuer.web.italker.push.bean.db.GroupMember"/>-->
-        <!--<mapping package="net.qiujuer.web.italker.push.bean.db"-->
-                 <!--class="net.qiujuer.web.italker.push.bean.db.User"/>-->
-        <!--<mapping package="net.qiujuer.web.italker.push.bean.db"-->
-                 <!--class="net.qiujuer.web.italker.push.bean.db.UserFollow"/>-->
-        <!--<mapping package="net.qiujuer.web.italker.push.bean.db"-->
-                 <!--class="net.qiujuer.web.italker.push.bean.db.Message"/>-->
-        <!--<mapping package="net.qiujuer.web.italker.push.bean.db"-->
-                 <!--class="net.qiujuer.web.italker.push.bean.db.PushHistory"/>-->
-        <!--<mapping package="net.qiujuer.web.italker.push.bean.db"-->
-                 <!--class="net.qiujuer.web.italker.push.bean.db.Apply"/>-->
+        <!--数据库操作映射到bean-->
+        <mapping package="com.mingchu.ruolan.push.bean.db"
+                 class="com.mingchu.ruolan.push.bean.db.User"/>
+        <mapping package="com.mingchu.ruolan.push.bean.db"
+                 class="com.mingchu.ruolan.push.bean.db.UserFollow"/>
+
+        <mapping package="com.mingchu.ruolan.push.bean.db"
+                 class="com.mingchu.ruolan.push.bean.db.Group"/>
+        <mapping package="com.mingchu.ruolan.push.bean.db"
+                 class="com.mingchu.ruolan.push.bean.db.GroupMember"/>
+
+        <mapping package="com.mingchu.ruolan.push.bean.db"
+                 class="com.mingchu.ruolan.push.bean.db.Message"/>
+        <mapping package="com.mingchu.ruolan.push.bean.db"
+                 class="com.mingchu.ruolan.push.bean.db.Apply"/>
+
+        <mapping package="com.mingchu.ruolan.push.bean.db"
+                 class="com.mingchu.ruolan.push.bean.db.PushHistory"/>
+
+
     </session-factory>
 </hibernate-configuration>

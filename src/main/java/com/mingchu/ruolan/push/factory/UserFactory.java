@@ -238,7 +238,7 @@ public class UserFactory {
             //重新加载一次用户信息 到self中  和当前的session绑定
             session.load(self, self.getId());
             //获取我关注的人
-            Set<UserFollow> follows = self.getFollowers();
+            Set<UserFollow> follows = self.getFollowing();
 
             //使用Java8简写方法
             return follows.stream()
