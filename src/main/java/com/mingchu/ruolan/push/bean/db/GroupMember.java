@@ -18,6 +18,9 @@ public class GroupMember {
     public static final int PERMISSION_TYPE_ADMIN = -1;  //管理员
     public static final int PERMISSION_TYPE_SU = 100;  //创建者
 
+    public static final int PERMISSION_TYPE_ADMIN_SU = 100;
+
+
     //通知类型
     public static final int NOTIFY_LEVEL_INVALID = -1;  //默认不通知
     public static final int NOTIFY_LEVEL_NONE = 0;  //默认通知级别

@@ -80,6 +80,11 @@ public class Message {
     @Column(updatable = false, insertable = false)
     private String groupId;
 
+    @CreationTimestamp
+    @Column(nullable = false)
+    private LocalDateTime mCreatedAt = LocalDateTime.now();
+
+
     public static int getTypeStr() {
         return TYPE_STR;
     }
@@ -178,5 +183,9 @@ public class Message {
 
     public void setGroupId(String groupId) {
         this.groupId = groupId;
+    }
+
+    public LocalDateTime getCreatedAt() {
+        return mCreatedAt;
     }
 }
