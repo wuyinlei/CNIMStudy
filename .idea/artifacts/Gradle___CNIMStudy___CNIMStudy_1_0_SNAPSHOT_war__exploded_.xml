@@ -19,7 +19,6 @@
         <element id="directory" name="lib">
           <element id="library" level="project" name="Gradle: com.google.code.gson:gson:2.8.0" />
           <element id="library" level="project" name="Gradle: com.google.guava:guava:21.0" />
-          <element id="library" level="project" name="Gradle: com.gexin.platform:gexin-rp-sdk-http:4.0.1.7" />
           <element id="library" level="project" name="Gradle: org.glassfish.jersey.core:jersey-client:2.26-b03" />
           <element id="library" level="project" name="Gradle: org.glassfish.jersey.core:jersey-server:2.26-b03" />
           <element id="library" level="project" name="Gradle: org.glassfish.jersey.containers:jersey-container-servlet:2.26-b03" />
@@ -28,8 +27,6 @@
           <element id="library" level="project" name="Gradle: org.hibernate:hibernate-entitymanager:5.2.9.Final" />
           <element id="library" level="project" name="Gradle: org.hibernate:hibernate-c3p0:5.2.9.Final" />
           <element id="library" level="project" name="Gradle: mysql:mysql-connector-java:6.0.6" />
-          <element id="library" level="project" name="Gradle: com.gexin.platform:gexin-rp-sdk-base:4.0.0.12" />
-          <element id="library" level="project" name="Gradle: com.gexin.platform:gexin-rp-sdk-template:4.0.0.6" />
           <element id="library" level="project" name="Gradle: javax.ws.rs:javax.ws.rs-api:2.1-m05" />
           <element id="library" level="project" name="Gradle: org.glassfish.jersey.core:jersey-common:2.26-b03" />
           <element id="library" level="project" name="Gradle: org.glassfish.hk2:hk2-api:2.5.0-b36" />
@@ -64,6 +61,10 @@
           <element id="library" level="project" name="Gradle: com.fasterxml.jackson.module:jackson-module-jaxb-annotations:2.8.4" />
           <element id="library" level="project" name="Gradle: com.mchange:mchange-commons-java:0.2.11" />
           <element id="library" level="project" name="Gradle: javax.inject:javax.inject:1" />
+          <element id="file-copy" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.gexin.platform/gexin-rp-sdk-http/4.0.1.9/43d69dab67d9f590f85b4cbaf1a21e46b642326c/gexin-rp-sdk-http-4.0.1.9.jar" />
+          <element id="file-copy" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.gexin.platform/gexin-rp-sdk-template/4.0.0.8/6eae02f278752e7f695351688d947bdf249ff48c/gexin-rp-sdk-template-4.0.0.8.jar" />
+          <element id="file-copy" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.gexin.platform/gexin-rp-sdk-base/4.0.0.14/f007ca19302502c41af442e39669015167935b30/gexin-rp-sdk-base-4.0.0.14.jar" />
+          <element id="file-copy" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.gexin.platform/gexin-rp-fastjson/1.0.0.0/2dfc972ddc9d2f52232a7a1a4f49ced2ea637f39/gexin-rp-fastjson-1.0.0.0.jar" />
         </element>
       </element>
     </root>

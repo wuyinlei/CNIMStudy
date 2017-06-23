@@ -11,5 +11,10 @@
       <user-name>root</user-name>
       <introspection-schemas>*:DB_IM_PUSH</introspection-schemas>
     </data-source>
+    <data-source name="hibernate.cfg.xml/Hibernate" uuid="7d0165ab-4ef9-4e67-88ce-e2f7e91e8fe1">
+      <database-info product="" version="" jdbc-version="" driver-name="" driver-version="" />
+      <first-sync>true</first-sync>
+      <user-name>root</user-name>
+    </data-source>
   </component>
 </project>

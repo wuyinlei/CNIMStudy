@@ -1,11 +1,13 @@
 package com.mingchu.ruolan.push.service;
 
 import com.google.common.base.Strings;
+import com.mingchu.ruolan.push.bean.api.base.PushModel;
 import com.mingchu.ruolan.push.bean.api.base.ResponseModel;
 import com.mingchu.ruolan.push.bean.api.user.UpdateInfoModel;
 import com.mingchu.ruolan.push.bean.card.UserCard;
 import com.mingchu.ruolan.push.bean.db.User;
 import com.mingchu.ruolan.push.factory.UserFactory;
+import com.mingchu.ruolan.push.utils.PushDispatcher;
 
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
@@ -50,6 +52,15 @@ public class UserService extends BaseService {
     @Produces(MediaType.APPLICATION_JSON)
     public ResponseModel<List<UserCard>> contact() {
         User self = getSelf();
+
+
+        PushModel model = new PushModel();
+        model.add(new PushModel.Entity(0,"hello"));
+        //测试
+        PushDispatcher dispatcher = PushDispatcher.start();
+        dispatcher.add(self,model);
+        dispatcher.submit();
+
         //拿到我的联系人
         List<User> userList = UserFactory.contacts(self);
         //转换成UserCard

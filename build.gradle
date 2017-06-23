@@ -20,8 +20,8 @@ dependencies {
     compile 'com.google.code.gson:gson:2.8.0'
     //Guava Java 封装类
     compile 'com.google.guava:guava:21.0'
-
-    compile 'com.gexin.platform:gexin-rp-sdk-http:4.0.1.7'
+    //个推依赖
+    compile 'com.gexin.platform:gexin-rp-sdk-http:4.0.1.9'
     //RestFul 接口框架
     compile 'org.glassfish.jersey.core:jersey-client:2.26-b03'
     compile 'org.glassfish.jersey.core:jersey-server:2.26-b03'
