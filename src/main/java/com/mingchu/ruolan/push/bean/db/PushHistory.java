@@ -124,4 +124,7 @@ public class PushHistory {
     public void setArrivalAt(LocalDateTime arrivalDate) {
         this.arrivalAt = arrivalDate;
     }
+
+
+
 }

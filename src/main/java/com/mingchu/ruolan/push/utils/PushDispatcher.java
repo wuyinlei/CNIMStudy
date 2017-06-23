@@ -57,7 +57,7 @@ public class PushDispatcher {
         template.setAppkey(appKey);
         //传递的内容
         template.setTransmissionContent(text);
-        template.setTransmissionType(0);
+        template.setTransmissionType(0);  //不自动启动app
 
         // 定义"AppMessage"类型消息对象，设置消息内容模板、发送的目标App列表
         // 、是否支持离线发送、以及离线消息有效期(单位毫秒)

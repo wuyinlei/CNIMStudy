@@ -26,7 +26,7 @@ public class MessageCard {
     public MessageCard(Message message) {
         this.id = message.getId();
         this.content = message.getContent();
-        this.type = Integer.parseInt(message.getType());
+        this.type = message.getType();
         this.attach = message.getAttach();
         this.createAt = message.getCreatedAt();
         this.groupId = message.getGroupId();

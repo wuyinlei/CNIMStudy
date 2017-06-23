@@ -2,6 +2,7 @@ package com.mingchu.ruolan.push.bean.card;
 
 import com.google.gson.annotations.Expose;
 import com.mingchu.ruolan.push.bean.db.User;
+import com.mingchu.ruolan.push.utils.Hib;
 
 import java.time.LocalDateTime;
 
@@ -55,6 +56,11 @@ public class UserCard {
         // TODO: 2017/6/10   得打关注人和粉丝的数量
 //        user.getFollowers().size();
         //懒加载会报错  因为没有Session
+        Hib.queryOnly(session -> {
+            session.load(user, user.getId());
+            follows = user.getFollowers().size();
+            following = user.getFollowing().size();
+        });
 
     }
 
