@@ -71,6 +71,12 @@ public class Hib {
         }
     }
 
+    /**
+     * 保存数据
+     *
+     * @param obj 传入类型  任意类型
+     * @return 类型  返回的类型  任意类型
+     */
     public static Object save(Object obj) {
         return query(session -> {
             session.saveOrUpdate(obj);
@@ -78,6 +84,11 @@ public class Hib {
         });
     }
 
+    /**
+     * 保存数据   保存的集合数据   没有返回类型
+     *
+     * @param objectList 需要保存的集合数据
+     */
     public static void save(List objectList) {
         queryOnly(session -> {
             for (Object o : objectList) {
@@ -86,6 +97,13 @@ public class Hib {
         });
     }
 
+    /**
+     * 查询数据
+     *
+     * @param result 查询的条件
+     * @param <T>    泛型T
+     * @return 泛型T
+     */
     public static <T> T query(QueryResult<T> result) {
         Session session = sessionFactory.openSession();
         Transaction transaction = session.beginTransaction();
@@ -108,6 +126,7 @@ public class Hib {
 
     /**
      * 就仅仅查询 不需要返回
+     *
      * @param result
      */
     public static void queryOnly(QueryOnly result) {
@@ -130,6 +149,7 @@ public class Hib {
 
     /**
      * 用户的实际操作的一个接口  有返回值
+     *
      * @param <T>
      */
     public interface QueryResult<T> {

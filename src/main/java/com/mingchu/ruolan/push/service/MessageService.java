@@ -21,7 +21,7 @@ import javax.ws.rs.core.MediaType;
 public class MessageService extends BaseService {
 
 
-    //拉取联系人接口
+    //
     @POST
     @Consumes(MediaType.APPLICATION_JSON)  //指定请求返回的响应体为JSON
     @Produces(MediaType.APPLICATION_JSON)

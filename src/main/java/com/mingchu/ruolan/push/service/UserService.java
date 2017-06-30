@@ -24,7 +24,7 @@ public class UserService extends BaseService {
 
 
     @PUT
-//    @Path("/update")  //注册接口  不需要写 就是当前目录
+    @Path("/update")  //更新接口  不需要写 就是当前目录
     @Consumes(MediaType.APPLICATION_JSON)  //指定请求返回的响应体为JSON
     @Produces(MediaType.APPLICATION_JSON)
     public ResponseModel<UserCard> update(

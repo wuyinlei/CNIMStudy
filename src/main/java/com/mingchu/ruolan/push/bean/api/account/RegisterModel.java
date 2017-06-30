@@ -11,9 +11,9 @@ import com.google.gson.annotations.Expose;
 public class RegisterModel {
 
     @Expose
-    private String account;  //账户
+    private String account;  //账户  也就是用户手机号
     @Expose
-    private String password;  //秘密吗
+    private String password;  //秘密
     @Expose
     private String name;  //名字
 
