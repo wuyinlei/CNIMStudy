@@ -1,5 +1,6 @@
 package com.mingchu.ruolan.push.service;
 
+import com.google.common.base.Strings;
 import com.mingchu.ruolan.push.bean.api.base.ResponseModel;
 import com.mingchu.ruolan.push.bean.api.group.GroupCreateModel;
 import com.mingchu.ruolan.push.bean.api.group.GroupMemberAddModel;
@@ -7,11 +8,22 @@ import com.mingchu.ruolan.push.bean.api.group.GroupMemberUpdateModel;
 import com.mingchu.ruolan.push.bean.card.ApplyCard;
 import com.mingchu.ruolan.push.bean.card.GroupCard;
 import com.mingchu.ruolan.push.bean.card.GroupMemberCard;
-import com.mingchu.ruolan.push.bean.card.UserCard;
+import com.mingchu.ruolan.push.bean.db.Group;
+import com.mingchu.ruolan.push.bean.db.GroupMember;
+import com.mingchu.ruolan.push.bean.db.User;
+import com.mingchu.ruolan.push.factory.GroupFactory;
+import com.mingchu.ruolan.push.factory.PushFactory;
+import com.mingchu.ruolan.push.factory.UserFactory;
+import com.mingchu.ruolan.push.provider.LocalDateTimeConverter;
 
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.util.ArrayList;
 import java.util.List;
+import java.util.Set;
+import java.util.stream.Collectors;
 
 /**
  * Created by wuyinlei on 2017/6/30.
@@ -34,9 +46,62 @@ public class GroupService extends BaseService {
     @Consumes(MediaType.APPLICATION_JSON)  //指定请求返回的响应体为JSON
     @Produces(MediaType.APPLICATION_JSON)
     public ResponseModel<GroupCard> createGroup(GroupCreateModel model) {
+        if (!GroupCreateModel.check(model)) {
+            return ResponseModel.buildParameterError();
+        }
+        //创建者
+        User creator = getSelf();
+        //移除  不在列表中
+        model.getUsers().remove(creator.getId());
+
+        if (model.getUsers().size() == 0) {
+            ResponseModel.buildParameterError();
+        }
+
+        //检查是否已经有这个名字
+        if (GroupFactory.findByName(model.getName()) != null) {
+            return ResponseModel.buildHaveNameError();
+        }
+
+        List<User> users = new ArrayList<>();
+        for (String userId : model.getUsers()) {
+            User user = UserFactory.findById(userId);
+            if (user == null)
+                continue;
+
+            users.add(user);
+        }
+
+        //没有一个成员
+        if (users.size() == 0)
+            ResponseModel.buildParameterError();
+
+        Group group = GroupFactory.create(creator, model, users);
+
+        if (group == null)
+            return ResponseModel.buildServiceError();
+
+        //拿群的管理员
+        GroupMember createMember = GroupFactory.getMember(creator.getId(), group.getId());
+        if (createMember == null)
+            return ResponseModel.buildServiceError();
+
+        //拿到群的成员  给所有的群成员发送信息  已经被添加到群的信息
+        Set<GroupMember> groupMembers = GroupFactory.getMembers(group);
+
+        if (groupMembers == null && groupMembers.size() == 0)
+            return ResponseModel.buildServiceError();
+        groupMembers = groupMembers.stream()
+                .filter(
+                        groupMember ->
+                                !groupMember.getId().equalsIgnoreCase(createMember.getId())
+                ).collect(Collectors.toSet());
+
+        //开始发起推送
+        PushFactory.pusGroupAdd(groupMembers);
 
 
-        return null;
+        return ResponseModel.buildOk(new GroupCard(createMember));
     }
 
 
@@ -52,8 +117,25 @@ public class GroupService extends BaseService {
     @Produces(MediaType.APPLICATION_JSON)
     public ResponseModel<List<GroupCard>> searchGroup(@PathParam("name") @DefaultValue("") String name) {
 
+        User user = getSelf();
 
-        return null;
+        List<Group> groups = GroupFactory.search(name);
+
+        if (groups != null && groups.size() > 0) {
+
+            List<GroupCard> groupCards = groups.stream()
+                    .map(group -> {
+
+                        GroupMember member = GroupFactory.getMember(user.getId(), group.getId());
+
+                        return new GroupCard(group, member);
+
+                    }).collect(Collectors.toList());
+
+            return ResponseModel.buildOk(groupCards);
+        }
+
+        return ResponseModel.buildOk();
     }
 
 
@@ -69,8 +151,34 @@ public class GroupService extends BaseService {
     @Produces(MediaType.APPLICATION_JSON)
     public ResponseModel<List<GroupCard>> groupList(@DefaultValue("") @PathParam("date") String date) {
 
+        User self = getSelf();
 
-        return null;
+        //拿时间
+        LocalDateTime dateTime = null;
+        if (!Strings.isNullOrEmpty(date)) {
+            try {
+                dateTime = LocalDateTime.parse(date, LocalDateTimeConverter.FORMATTER);
+
+            } catch (Exception e) {
+                dateTime = null;
+            }
+        }
+
+        Set<GroupMember> members = GroupFactory.getMembers(self);
+
+        if (members == null || members.size() == 0)
+            return ResponseModel.buildOk();
+
+        final LocalDateTime finalDateTime = dateTime;
+
+        List<GroupCard> groupCards = members.stream()
+                .filter(groupMember -> finalDateTime == null //时间如果为null  则不做限制
+                        || groupMember.getUpdateAt().isAfter(finalDateTime))  //或者说时间不为null  你需要在我的这个时间之后
+                .map(GroupCard::new)  //转换操作
+                .collect(Collectors.toList());  //转换成list
+
+
+        return ResponseModel.buildOk(groupCards);
     }
 
     /**
@@ -85,8 +193,17 @@ public class GroupService extends BaseService {
     @Produces(MediaType.APPLICATION_JSON)
     public ResponseModel<GroupCard> getGroupInfo(@PathParam("groupId") String groupId) {
 
+        if (Strings.isNullOrEmpty(groupId))
+            return ResponseModel.buildParameterError();
 
-        return null;
+        User self = getSelf();
+
+        GroupMember member = GroupFactory.getMember(self.getId(), groupId);
+
+        if (member == null)
+            return ResponseModel.buildNotFoundGroupError(null);
+
+        return ResponseModel.buildOk(new GroupCard(member));
     }
 
 
@@ -102,13 +219,34 @@ public class GroupService extends BaseService {
     @Produces(MediaType.APPLICATION_JSON)
     public ResponseModel<List<GroupMemberCard>> getGroupMembers(@PathParam("groupId") String groupId) {
 
+        User self = getSelf();
 
-        return null;
+        Group group = GroupFactory.findById(groupId);
+        if (group == null)
+            return ResponseModel.buildNotFoundGroupError(null);
+
+        GroupMember selfMember = GroupFactory.getMember(self.getId(), groupId);
+
+        if (selfMember == null)
+            return ResponseModel.buildNoPermissionError();
+
+        //拉取群的成员
+        Set<GroupMember> members = GroupFactory.getMembers(group);
+
+        if (members == null)
+            return ResponseModel.buildServiceError();
+
+        List<GroupMemberCard> groupMemberCards = members
+                .stream()
+                .map(GroupMemberCard::new)
+                .collect(Collectors.toList());
+
+        return ResponseModel.buildOk(groupMemberCards);
     }
 
 
     /**
-     * 申请加入一个群
+     * 添加一个人到群
      *
      * @param groupId 群Id   必须是群的管理者之一
      * @param model   创建的model
@@ -120,7 +258,71 @@ public class GroupService extends BaseService {
     @Produces(MediaType.APPLICATION_JSON)
     public ResponseModel<List<GroupMemberCard>> addGroupMember(@PathParam("groupId") String groupId, GroupMemberAddModel model) {
 
-        return null;
+
+        if (Strings.isNullOrEmpty(groupId) && !GroupMemberAddModel.check(model))
+            return ResponseModel.buildParameterError();
+
+        User self = getSelf();
+
+        model.getUsers().remove(self.getId());  //移除自己
+
+        if (model.getUsers().size() == 0)
+            return ResponseModel.buildParameterError();
+
+        Group group = GroupFactory.findById(groupId);
+        if (group == null)
+            return ResponseModel.buildNotFoundGroupError(null);
+
+        GroupMember selfMember = GroupFactory.getMember(self.getId(), groupId);
+
+        //必须是成员  同时也必须是管理员级别以及以上
+        if (selfMember == null || selfMember.getPermissionType() == GroupMember.NOTIFY_LEVEL_NONE)
+            return ResponseModel.buildNoPermissionError();
+
+        Set<GroupMember> oldMembers = GroupFactory.getMembers(group);
+        if (oldMembers == null && oldMembers.size() == 0)
+            return ResponseModel.buildNotFoundGroupError(null);
+
+        Set<String> oldMemberUserIds = oldMembers.stream()
+                .map(GroupMember::getUserId)
+                .collect(Collectors.toSet());
+
+        List<User> insertUsers = new ArrayList<>();
+
+
+        for (String userId : model.getUsers()) {
+            User user = UserFactory.findById(userId);
+            if (user == null)
+                continue;
+
+            if (oldMemberUserIds.contains(user.getId()))
+                continue;
+
+            insertUsers.add(user);
+        }
+
+        if (insertUsers.size() == 0)
+            return ResponseModel.buildParameterError();
+
+        Set<GroupMember> insertMembers = GroupFactory.addMembers(group, insertUsers);
+
+        if (insertMembers == null)
+            return ResponseModel.buildServiceError();
+
+        List<GroupMemberCard> insertCarts = insertMembers.stream()
+                .map(GroupMemberCard::new)
+                .collect(Collectors.toList());
+
+        //通知
+
+
+        //通知新增的群员   你已经被加入了  群
+        PushFactory.pushJoinGroup(insertMembers);
+
+        //通知老的成员   有  xxx  加入了  群
+        PushFactory.pushGroupMemberAdd(oldMembers,insertCarts);
+
+        return ResponseModel.buildOk(insertCarts);
     }
 
     /**

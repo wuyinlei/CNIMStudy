@@ -2,6 +2,7 @@ package com.mingchu.ruolan.push.factory;
 
 import com.google.common.base.Strings;
 import com.mingchu.ruolan.push.bean.api.base.PushModel;
+import com.mingchu.ruolan.push.bean.card.GroupMemberCard;
 import com.mingchu.ruolan.push.bean.card.MessageCard;
 import com.mingchu.ruolan.push.bean.db.*;
 import com.mingchu.ruolan.push.utils.Hib;
@@ -142,11 +143,43 @@ public class PushFactory {
             historyList.add(pushHistory);
 
             PushModel pushModel = new PushModel();
-            pushModel.add(pushHistory.getEntityType(),pushHistory.getEntity());
+            pushModel.add(pushHistory.getEntityType(), pushHistory.getEntity());
 
-            dispatcher.add(receiver,pushModel);
+            dispatcher.add(receiver, pushModel);
 
 
         }
+    }
+
+    /**
+     * 创建群的时候给每个群成员发送一条已经加入群的消息
+     *
+     * @param groupMembers 群成员
+     */
+    public static void pusGroupAdd(Set<GroupMember> groupMembers) {
+
+
+    }
+
+    /**
+     * 推送给新加入的成员 告知他们已经加入到了xxx群
+     * @param insertMembers  被加入群的成员
+     */
+    public static void pushJoinGroup(Set<GroupMember> insertMembers) {
+
+
+
+    }
+
+    /**
+     * 通知老的成员 有一系列 新的人加入新增
+     * @param oldMembers  老成员
+     * @param insertMembers  新增加的
+     */
+    public static void pushGroupMemberAdd(Set<GroupMember> oldMembers, List<GroupMemberCard> insertMembers) {
+
+
+
+
     }
 }

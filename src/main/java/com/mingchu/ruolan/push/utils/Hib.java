@@ -99,9 +99,8 @@ public class Hib {
 
     /**
      * 查询数据
-     *
      * @param result 查询的条件
-     * @param <T>    泛型T
+     * @param <T>  泛型T
      * @return 泛型T
      */
     public static <T> T query(QueryResult<T> result) {
