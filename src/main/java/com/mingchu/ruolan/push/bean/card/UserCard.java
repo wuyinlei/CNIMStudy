@@ -3,6 +3,7 @@ package com.mingchu.ruolan.push.bean.card;
 import com.google.gson.annotations.Expose;
 import com.mingchu.ruolan.push.bean.db.User;
 import com.mingchu.ruolan.push.utils.Hib;
+import org.hibernate.Hibernate;
 
 import java.time.LocalDateTime;
 
@@ -36,10 +37,13 @@ public class UserCard {
 
     public UserCard(User user) {
        this(user,false);
-        // TODO: 2017/6/10   得打关注人和粉丝的数量
 //        user.getFollowers().size();
          //懒加载会报错  因为没有Session
-
+        Hib.queryOnly(session -> {
+            session.load(user, user.getId());
+            follows = user.getFollowers().size();
+            following = user.getFollowing().size();
+        });
     }
 
     public UserCard(User user,boolean isFollow) {
@@ -52,12 +56,14 @@ public class UserCard {
         this.desc = user.getDescription();
         this.sex = user.getSex();
         this.modifyAt = user.getUpdateAt();
-
-        // TODO: 2017/6/10   得打关注人和粉丝的数量
 //        user.getFollowers().size();
         //懒加载会报错  因为没有Session
         Hib.queryOnly(session -> {
             session.load(user, user.getId());
+            //这个时候仅仅只是进行了数量查询  并没有查询整个集合
+            //要查询集合 必须在session存在情况下进行遍历
+            //或者是用
+//            Hibernate.initialize(User.class);
             follows = user.getFollowers().size();
             following = user.getFollowing().size();
         });

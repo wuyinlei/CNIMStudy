@@ -6,6 +6,7 @@ import com.mingchu.ruolan.push.bean.api.base.ResponseModel;
 import com.mingchu.ruolan.push.bean.api.user.UpdateInfoModel;
 import com.mingchu.ruolan.push.bean.card.UserCard;
 import com.mingchu.ruolan.push.bean.db.User;
+import com.mingchu.ruolan.push.factory.PushFactory;
 import com.mingchu.ruolan.push.factory.UserFactory;
 import com.mingchu.ruolan.push.utils.PushDispatcher;
 
@@ -100,8 +101,10 @@ public class UserService extends BaseService {
             return ResponseModel.buildServiceError();
         }
 
-        // TODO: 2017/6/11  
-        //通知我关注的人   提示一条信息  我关注了她
+        //通知我关注的人
+        // 提示一条信息  我关注了她  给他发送一个我的信息
+        PushFactory.pushFollow(followUser,new UserCard(self));
+
 
         //返回关注的人的信息
         return ResponseModel.buildOk(new UserCard(followUser, true));

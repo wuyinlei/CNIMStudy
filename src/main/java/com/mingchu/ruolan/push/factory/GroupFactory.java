@@ -183,7 +183,7 @@ public class GroupFactory {
      */
     public static Set<GroupMember> addMembers(Group group, List<User> insertUsers) {
 
-        Hib.query(session -> {
+       return Hib.query(session -> {
 
             Set<GroupMember> members = new HashSet<>();
 
@@ -195,9 +195,16 @@ public class GroupFactory {
                 members.add(member);
             }
 
+            //进行数据刷新
+//           for (GroupMember member : members) {
+//               session.refresh(member);  //进行刷新   会进行关联查询 但是在此循环 消耗较高
+//           }
+
+
 
             return members;
         });
+
 
     }
 }
