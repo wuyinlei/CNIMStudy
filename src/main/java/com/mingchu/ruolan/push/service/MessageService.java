@@ -38,9 +38,9 @@ public class MessageService extends BaseService {
             return ResponseModel.buildOk(new MessageCard(message));
         }
 
-        if (model.getType() == Message.RECEIVER_TYPE_GROUP) {
+        if (model.getReceiverType() == Message.RECEIVER_TYPE_GROUP) {
             return pushToGroup(self, model);
-        } else if (model.getType() == Message.RECEIVER_TYPE_NONW) {
+        } else if (model.getReceiverType() == Message.RECEIVER_TYPE_NONW) {
             return pushToUser(self, model);
         }
         return null;

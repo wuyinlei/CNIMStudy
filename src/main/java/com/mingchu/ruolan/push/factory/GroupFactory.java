@@ -37,7 +37,7 @@ public class GroupFactory {
     public static Group findByName(String name) {
 
         return Hib.query(session ->
-                (Group) session.createQuery("from Group where lower(name)=:name ")
+                (Group) session.createQuery("from Group where lower(name)=:name")
                         .setParameter("name", name.toLowerCase())
                         .uniqueResult());
     }
@@ -107,6 +107,8 @@ public class GroupFactory {
 
                 session.save(member);
             }
+
+            session.saveOrUpdate(group);
 
 //            session.flush();  刷新缓冲区
 //            session.load(group,group.getId());  重新加载

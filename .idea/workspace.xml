@@ -2,15 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ebbd8c72-f44e-4a51-8afd-3d8b5cac41bc" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/libs/CNIMStudy-1.0-SNAPSHOT.war" afterPath="$PROJECT_DIR$/build/libs/CNIMStudy-1.0-SNAPSHOT.war" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/mingchu/ruolan/push/bean/card/GroupMemberCard.java" afterPath="$PROJECT_DIR$/src/main/java/com/mingchu/ruolan/push/bean/card/GroupMemberCard.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/mingchu/ruolan/push/bean/card/UserCard.java" afterPath="$PROJECT_DIR$/src/main/java/com/mingchu/ruolan/push/bean/card/UserCard.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/mingchu/ruolan/push/factory/GroupFactory.java" afterPath="$PROJECT_DIR$/src/main/java/com/mingchu/ruolan/push/factory/GroupFactory.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/mingchu/ruolan/push/factory/PushFactory.java" afterPath="$PROJECT_DIR$/src/main/java/com/mingchu/ruolan/push/factory/PushFactory.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/mingchu/ruolan/push/factory/UserFactory.java" afterPath="$PROJECT_DIR$/src/main/java/com/mingchu/ruolan/push/factory/UserFactory.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/mingchu/ruolan/push/service/GroupService.java" afterPath="$PROJECT_DIR$/src/main/java/com/mingchu/ruolan/push/service/GroupService.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/mingchu/ruolan/push/service/UserService.java" afterPath="$PROJECT_DIR$/src/main/java/com/mingchu/ruolan/push/service/UserService.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/mingchu/ruolan/push/service/MessageService.java" afterPath="$PROJECT_DIR$/src/main/java/com/mingchu/ruolan/push/service/MessageService.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/.gradle/" />
@@ -62,41 +57,106 @@
       <file leaf-file-name="GroupFactory.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/mingchu/ruolan/push/factory/GroupFactory.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="337">
-              <caret line="202" column="0" lean-forward="false" selection-start-line="202" selection-start-column="0" selection-end-line="202" selection-end-column="0" />
+            <state relative-caret-position="1695">
+              <caret line="123" column="15" lean-forward="false" selection-start-line="123" selection-start-column="15" selection-end-line="123" selection-end-column="15" />
               <folding>
-                <element signature="e#1298#1328#1" expanded="true" />
+                <element signature="imports" expanded="false" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="PushFactory.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/mingchu/ruolan/push/factory/PushFactory.java">
+      <file leaf-file-name="hibernate.cfg.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/hibernate.cfg.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="142">
-              <caret line="198" column="27" lean-forward="true" selection-start-line="198" selection-start-column="27" selection-end-line="198" selection-end-column="27" />
+            <state relative-caret-position="270">
+              <caret line="18" column="19" lean-forward="false" selection-start-line="18" selection-start-column="19" selection-end-line="18" selection-end-column="19" />
+              <folding>
+                <element signature="e#740#745#0" expanded="false" />
+                <element signature="e#760#765#0" expanded="false" />
+                <element signature="e#787#792#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Apply.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/mingchu/ruolan/push/bean/db/Apply.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="360">
+              <caret line="30" column="26" lean-forward="false" selection-start-line="30" selection-start-column="26" selection-end-line="30" selection-end-column="26" />
+              <folding>
+                <element signature="imports" expanded="false" />
+                <element signature="e#1847#1848#0" expanded="false" />
+                <element signature="e#1872#1873#0" expanded="false" />
+                <element signature="e#1908#1909#0" expanded="false" />
+                <element signature="e#1936#1937#0" expanded="false" />
+                <element signature="e#1974#1975#0" expanded="false" />
+                <element signature="e#2008#2009#0" expanded="false" />
+                <element signature="e#2062#2063#0" expanded="false" />
+                <element signature="e#2108#2109#0" expanded="false" />
+                <element signature="e#2141#2142#0" expanded="false" />
+                <element signature="e#2170#2171#0" expanded="false" />
+                <element signature="e#2214#2215#0" expanded="false" />
+                <element signature="e#2250#2251#0" expanded="false" />
+                <element signature="e#2278#2279#0" expanded="false" />
+                <element signature="e#2305#2306#0" expanded="false" />
+                <element signature="e#2342#2343#0" expanded="false" />
+                <element signature="e#2374#2375#0" expanded="false" />
+                <element signature="e#2409#2410#0" expanded="false" />
+                <element signature="e#2440#2441#0" expanded="false" />
+                <element signature="e#2488#2489#0" expanded="false" />
+                <element signature="e#2528#2529#0" expanded="false" />
+                <element signature="e#2562#2563#0" expanded="false" />
+                <element signature="e#2594#2595#0" expanded="false" />
+                <element signature="e#2642#2643#0" expanded="false" />
+                <element signature="e#2684#2685#0" expanded="false" />
+                <element signature="e#2722#2723#0" expanded="false" />
+                <element signature="e#2756#2757#0" expanded="false" />
+                <element signature="e#2810#2811#0" expanded="false" />
+                <element signature="e#2856#2857#0" expanded="false" />
+                <element signature="e#2899#2900#0" expanded="false" />
+                <element signature="e#2931#2932#0" expanded="false" />
+                <element signature="e#2988#2989#0" expanded="false" />
+                <element signature="e#3030#3031#0" expanded="false" />
+                <element signature="e#3073#3074#0" expanded="false" />
+                <element signature="e#3105#3106#0" expanded="false" />
+                <element signature="e#3162#3163#0" expanded="false" />
+                <element signature="e#3204#3205#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="build.gradle" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/build.gradle">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="318">
+              <caret line="28" column="66" lean-forward="false" selection-start-line="28" selection-start-column="66" selection-end-line="28" selection-end-column="66" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="UserService.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/mingchu/ruolan/push/service/UserService.java">
+      <file leaf-file-name="MessageService.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/mingchu/ruolan/push/service/MessageService.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="202">
-              <caret line="105" column="28" lean-forward="false" selection-start-line="105" selection-start-column="28" selection-end-line="105" selection-end-column="28" />
+            <state relative-caret-position="162">
+              <caret line="37" column="16" lean-forward="true" selection-start-line="37" selection-start-column="16" selection-end-line="37" selection-end-column="16" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="UserCard.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/mingchu/ruolan/push/bean/card/UserCard.java">
+      <file leaf-file-name="MessageCreateModel.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/mingchu/ruolan/push/bean/api/message/MessageCreateModel.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="434">
-              <caret line="66" column="45" lean-forward="false" selection-start-line="66" selection-start-column="45" selection-end-line="66" selection-end-column="45" />
-              <folding />
+            <state relative-caret-position="77">
+              <caret line="22" column="11" lean-forward="true" selection-start-line="22" selection-start-column="11" selection-end-line="22" selection-end-column="11" />
+              <folding>
+                <element signature="e#1963#1964#0" expanded="true" />
+                <element signature="e#1998#1999#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -104,43 +164,62 @@
       <file leaf-file-name="UserFactory.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/mingchu/ruolan/push/factory/UserFactory.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="202">
+            <state relative-caret-position="1605">
               <caret line="118" column="35" lean-forward="false" selection-start-line="118" selection-start-column="35" selection-end-line="118" selection-end-column="35" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="GroupMemberCard.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/mingchu/ruolan/push/bean/card/GroupMemberCard.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="227">
-              <caret line="28" column="47" lean-forward="true" selection-start-line="28" selection-start-column="47" selection-end-line="28" selection-end-column="47" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="GroupCreateModel.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/mingchu/ruolan/push/bean/api/group/GroupCreateModel.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="282">
-              <caret line="25" column="29" lean-forward="false" selection-start-line="25" selection-start-column="24" selection-end-line="25" selection-end-column="29" />
               <folding>
-                <element signature="imports" expanded="true" />
+                <element signature="imports" expanded="false" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="GroupMember.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/mingchu/ruolan/push/bean/db/GroupMember.java">
+      <file leaf-file-name="GroupMemberCard.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/mingchu/ruolan/push/bean/card/GroupMemberCard.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="300">
-              <caret line="131" column="13" lean-forward="true" selection-start-line="131" selection-start-column="13" selection-end-line="131" selection-end-column="13" />
+            <state relative-caret-position="390">
+              <caret line="29" column="49" lean-forward="false" selection-start-line="29" selection-start-column="49" selection-end-line="29" selection-end-column="49" />
               <folding>
-                <element signature="e#3257#3258#0" expanded="true" />
-                <element signature="e#3284#3285#0" expanded="true" />
+                <element signature="imports" expanded="false" />
+                <element signature="e#966#967#0" expanded="false" />
+                <element signature="e#991#992#0" expanded="false" />
+                <element signature="e#1027#1028#0" expanded="false" />
+                <element signature="e#1055#1056#0" expanded="false" />
+                <element signature="e#1087#1088#0" expanded="false" />
+                <element signature="e#1115#1116#0" expanded="false" />
+                <element signature="e#1157#1158#0" expanded="false" />
+                <element signature="e#1191#1192#0" expanded="false" />
+                <element signature="e#1223#1224#0" expanded="false" />
+                <element signature="e#1253#1254#0" expanded="false" />
+                <element signature="e#1296#1297#0" expanded="false" />
+                <element signature="e#1327#1328#0" expanded="false" />
+                <element signature="e#1359#1360#0" expanded="false" />
+                <element signature="e#1389#1390#0" expanded="false" />
+                <element signature="e#1432#1433#0" expanded="false" />
+                <element signature="e#1463#1464#0" expanded="false" />
+                <element signature="e#1496#1497#0" expanded="false" />
+                <element signature="e#1525#1526#0" expanded="false" />
+                <element signature="e#1569#1570#0" expanded="false" />
+                <element signature="e#1605#1606#0" expanded="false" />
+                <element signature="e#1639#1640#0" expanded="false" />
+                <element signature="e#1669#1670#0" expanded="false" />
+                <element signature="e#1715#1716#0" expanded="false" />
+                <element signature="e#1753#1754#0" expanded="false" />
+                <element signature="e#1795#1796#0" expanded="false" />
+                <element signature="e#1826#1827#0" expanded="false" />
+                <element signature="e#1881#1882#0" expanded="false" />
+                <element signature="e#1921#1922#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="GroupService.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/mingchu/ruolan/push/service/GroupService.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="570">
+              <caret line="60" column="34" lean-forward="false" selection-start-line="60" selection-start-column="34" selection-end-line="60" selection-end-column="34" />
+              <folding>
+                <element signature="imports" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -149,9 +228,71 @@
       <file leaf-file-name="User.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/mingchu/ruolan/push/bean/db/User.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-26">
+            <state relative-caret-position="165">
               <caret line="20" column="13" lean-forward="false" selection-start-line="20" selection-start-column="13" selection-end-line="20" selection-end-column="13" />
-              <folding />
+              <folding>
+                <element signature="imports" expanded="false" />
+                <element signature="e#2943#2944#0" expanded="false" />
+                <element signature="e#2968#2969#0" expanded="false" />
+                <element signature="e#3004#3005#0" expanded="false" />
+                <element signature="e#3032#3033#0" expanded="false" />
+                <element signature="e#3063#3064#0" expanded="false" />
+                <element signature="e#3090#3091#0" expanded="false" />
+                <element signature="e#3130#3131#0" expanded="false" />
+                <element signature="e#3162#3163#0" expanded="false" />
+                <element signature="e#3194#3195#0" expanded="false" />
+                <element signature="e#3222#3223#0" expanded="false" />
+                <element signature="e#3264#3265#0" expanded="false" />
+                <element signature="e#3298#3299#0" expanded="false" />
+                <element signature="e#3333#3334#0" expanded="false" />
+                <element signature="e#3364#3365#0" expanded="false" />
+                <element signature="e#3412#3413#0" expanded="false" />
+                <element signature="e#3452#3453#0" expanded="false" />
+                <element signature="e#3487#3488#0" expanded="false" />
+                <element signature="e#3518#3519#0" expanded="false" />
+                <element signature="e#3566#3567#0" expanded="false" />
+                <element signature="e#3606#3607#0" expanded="false" />
+                <element signature="e#3644#3645#0" expanded="false" />
+                <element signature="e#3678#3679#0" expanded="false" />
+                <element signature="e#3732#3733#0" expanded="false" />
+                <element signature="e#3778#3779#0" expanded="false" />
+                <element signature="e#3805#3806#0" expanded="false" />
+                <element signature="e#3831#3832#0" expanded="false" />
+                <element signature="e#3866#3867#0" expanded="false" />
+                <element signature="e#3896#3897#0" expanded="false" />
+                <element signature="e#3928#3929#0" expanded="false" />
+                <element signature="e#3956#3957#0" expanded="false" />
+                <element signature="e#3998#3999#0" expanded="false" />
+                <element signature="e#4032#4033#0" expanded="false" />
+                <element signature="e#4065#4066#0" expanded="false" />
+                <element signature="e#4094#4095#0" expanded="false" />
+                <element signature="e#4138#4139#0" expanded="false" />
+                <element signature="e#4174#4175#0" expanded="false" />
+                <element signature="e#4216#4217#0" expanded="false" />
+                <element signature="e#4247#4248#0" expanded="false" />
+                <element signature="e#4302#4303#0" expanded="false" />
+                <element signature="e#4342#4343#0" expanded="false" />
+                <element signature="e#4384#4385#0" expanded="false" />
+                <element signature="e#4415#4416#0" expanded="false" />
+                <element signature="e#4470#4471#0" expanded="false" />
+                <element signature="e#4510#4511#0" expanded="false" />
+                <element signature="e#4557#4558#0" expanded="false" />
+                <element signature="e#4593#4594#0" expanded="false" />
+                <element signature="e#4658#4659#0" expanded="false" />
+                <element signature="e#4708#4709#0" expanded="false" />
+                <element signature="e#4754#4755#0" expanded="false" />
+                <element signature="e#4786#4787#0" expanded="false" />
+                <element signature="e#4845#4846#0" expanded="false" />
+                <element signature="e#4887#4888#0" expanded="false" />
+                <element signature="e#4932#4933#0" expanded="false" />
+                <element signature="e#4964#4965#0" expanded="false" />
+                <element signature="e#5023#5024#0" expanded="false" />
+                <element signature="e#5065#5066#0" expanded="false" />
+                <element signature="e#5102#5103#0" expanded="false" />
+                <element signature="e#5131#5132#0" expanded="false" />
+                <element signature="e#5179#5180#0" expanded="false" />
+                <element signature="e#5215#5216#0" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -170,6 +311,7 @@
     <findStrings>
       <find>ERROR_SERVICE</find>
       <find>pushfa</find>
+      <find>Can't find receiver user</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -505,7 +647,6 @@
         <option value="$PROJECT_DIR$/src/main/java/com/mingchu/ruolan/push/bean/api/message/MessageCreateModel.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/mingchu/ruolan/push/bean/card/MessageCard.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/mingchu/ruolan/push/bean/db/PushHistory.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/mingchu/ruolan/push/service/MessageService.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/mingchu/ruolan/push/bean/api/account/RegisterModel.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/mingchu/ruolan/push/bean/api/group/GroupCreateModel.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/mingchu/ruolan/push/utils/Hib.java" />
@@ -517,8 +658,9 @@
         <option value="$PROJECT_DIR$/src/main/java/com/mingchu/ruolan/push/service/UserService.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/mingchu/ruolan/push/factory/PushFactory.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/mingchu/ruolan/push/service/GroupService.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/mingchu/ruolan/push/factory/GroupFactory.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/mingchu/ruolan/push/bean/card/GroupMemberCard.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/mingchu/ruolan/push/factory/GroupFactory.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/mingchu/ruolan/push/service/MessageService.java" />
       </list>
     </option>
   </component>
@@ -571,6 +713,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -594,306 +737,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="CNIMStudy" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="IMooc" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="org.jetbrains.plugins.gradle.projectView.GradleTreeStructureProvider$GradleSourceSetDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="CNIMStudy" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="IMooc" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="org.jetbrains.plugins.gradle.projectView.GradleTreeStructureProvider$GradleSourceSetDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="push" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="CNIMStudy" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="IMooc" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="org.jetbrains.plugins.gradle.projectView.GradleTreeStructureProvider$GradleSourceSetDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="push" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="service" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="CNIMStudy" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="IMooc" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="org.jetbrains.plugins.gradle.projectView.GradleTreeStructureProvider$GradleSourceSetDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="push" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="factory" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="CNIMStudy" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="IMooc" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="org.jetbrains.plugins.gradle.projectView.GradleTreeStructureProvider$GradleSourceSetDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="push" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="bean" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="CNIMStudy" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="IMooc" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="org.jetbrains.plugins.gradle.projectView.GradleTreeStructureProvider$GradleSourceSetDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="push" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="bean" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="card" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="CNIMStudy" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="IMooc" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="org.jetbrains.plugins.gradle.projectView.GradleTreeStructureProvider$GradleSourceSetDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="push" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="bean" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="api" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="CNIMStudy" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="IMooc" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="org.jetbrains.plugins.gradle.projectView.GradleTreeStructureProvider$GradleSourceSetDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="push" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="bean" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="api" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="message" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="CNIMStudy" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="IMooc" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="org.jetbrains.plugins.gradle.projectView.GradleTreeStructureProvider$GradleSourceSetDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="push" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="bean" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="api" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="group" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="CNIMStudy" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="IMooc" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="org.jetbrains.plugins.gradle.projectView.GradleTreeStructureProvider$GradleSourceSetDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="file" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -1126,7 +969,6 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -1677,7 +1519,14 @@
       <workItem from="1498131681966" duration="14020000" />
       <workItem from="1498548166610" duration="562000" />
       <workItem from="1498574306889" duration="693000" />
-      <workItem from="1498650908085" duration="20584000" />
+      <workItem from="1498650908085" duration="23659000" />
+      <workItem from="1499086930514" duration="2401000" />
+      <workItem from="1499173663102" duration="761000" />
+      <workItem from="1499257945084" duration="885000" />
+      <workItem from="1499322917602" duration="529000" />
+      <workItem from="1499344074357" duration="570000" />
+      <workItem from="1499483764213" duration="241000" />
+      <workItem from="1499503693215" duration="393000" />
     </task>
     <task id="LOCAL-00001" summary="第一个RESTful接口实现">
       <created>1496565831499</created>
@@ -1847,11 +1696,18 @@
       <option name="project" value="LOCAL" />
       <updated>1498897079628</updated>
     </task>
-    <option name="localTasksCounter" value="25" />
+    <task id="LOCAL-00025" summary="服务器端相关推送逻辑(添加群推送/添加人员推送/创建群推送)以及群的相关接口的测试">
+      <created>1498904762475</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1498904762476</updated>
+    </task>
+    <option name="localTasksCounter" value="26" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="97028000" />
+    <option name="totallyTimeSpent" value="105883000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1878,9 +1734,9 @@
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24959612" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39941263" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3984733" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32892805" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32892805" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32824427" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32892805" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -1889,7 +1745,7 @@
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32892805" sideWeight="0.4951535" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32892805" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Persistence" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.31987077" sideWeight="0.5087282" order="3" side_tool="true" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25444266" sideWeight="0.49127182" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.28271407" sideWeight="0.49127182" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Bean Validation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32892805" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -1971,7 +1827,9 @@
     <MESSAGE value="发送到群和发送到接收者(消息推送并且存储到历史记录数据库)" />
     <MESSAGE value="群相关接口定义(只有方法还没有逻辑)" />
     <MESSAGE value="群的相关接口的实现(添加群、拉取群信息、拉取成员信息、添加群成员、创建群)" />
-    <option name="LAST_COMMIT_MESSAGE" value="群的相关接口的实现(添加群、拉取群信息、拉取成员信息、添加群成员、创建群)" />
+    <MESSAGE value="服务器端相关推送逻辑(添加群推送/添加人员推送/创建群推送)以及群的相关接口的测试" />
+    <MESSAGE value="修复在群组聊天的时候发送消息失败的bug" />
+    <option name="LAST_COMMIT_MESSAGE" value="修复在群组聊天的时候发送消息失败的bug" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="XDebuggerManager">
@@ -1983,10 +1841,26 @@
           <properties />
           <option name="timeStamp" value="4" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/mingchu/ruolan/push/service/GroupService.java</url>
+          <line>47</line>
+          <properties />
+          <option name="timeStamp" value="11" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/mingchu/ruolan/push/service/GroupService.java</url>
+          <line>60</line>
+          <properties />
+          <option name="timeStamp" value="12" />
+        </line-breakpoint>
       </breakpoints>
-      <option name="time" value="11" />
+      <option name="time" value="14" />
     </breakpoint-manager>
-    <watches-manager />
+    <watches-manager>
+      <configuration name="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory">
+        <watch expression="GroupFactory.findByName(model.getName())" />
+      </configuration>
+    </watches-manager>
   </component>
   <component name="antWorkspaceConfiguration">
     <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />
@@ -1997,7 +1871,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="600">
           <caret line="40" column="24" lean-forward="true" selection-start-line="40" selection-start-column="24" selection-end-line="40" selection-end-column="24" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2065,13 +1938,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/mingchu/ruolan/push/bean/db/Apply.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="15" column="13" lean-forward="false" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_121.jdk/Contents/Home/src.zip!/java/util/stream/Stream.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="218">
@@ -2103,21 +1969,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/hibernate.cfg.xml">
-      <provider editor-type-id="JavaFX-Scene-Builder">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="20" column="65" lean-forward="false" selection-start-line="20" selection-start-column="65" selection-end-line="20" selection-end-column="65" />
-          <folding>
-            <element signature="e#740#745#0" expanded="false" />
-            <element signature="e#760#765#0" expanded="false" />
-            <element signature="e#787#792#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/mingchu/ruolan/push/bean/card/ApplyCard.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="345">
@@ -2125,22 +1976,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/build.gradle">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="22" column="10" lean-forward="false" selection-start-line="22" selection-start-column="10" selection-end-line="22" selection-end-column="10" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/mingchu/ruolan/push/bean/db/Message.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1477">
           <caret line="144" column="15" lean-forward="false" selection-start-line="144" selection-start-column="15" selection-end-line="144" selection-end-column="15" />
-          <folding>
-            <element signature="e#3573#3574#0" expanded="false" />
-            <element signature="e#3600#3601#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -2148,7 +1987,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="390">
           <caret line="29" column="42" lean-forward="true" selection-start-line="29" selection-start-column="42" selection-end-line="29" selection-end-column="42" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2156,45 +1994,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1305">
           <caret line="128" column="0" lean-forward="false" selection-start-line="128" selection-start-column="0" selection-end-line="128" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="e#1536#1537#0" expanded="false" />
-            <element signature="e#1561#1562#0" expanded="false" />
-            <element signature="e#1597#1598#0" expanded="false" />
-            <element signature="e#1625#1626#0" expanded="false" />
-            <element signature="e#1659#1660#0" expanded="false" />
-            <element signature="e#1692#1693#0" expanded="false" />
-            <element signature="e#1741#1742#0" expanded="false" />
-            <element signature="e#1785#1786#0" expanded="false" />
-            <element signature="e#1818#1819#0" expanded="false" />
-            <element signature="e#1847#1848#0" expanded="false" />
-            <element signature="e#1891#1892#0" expanded="false" />
-            <element signature="e#1927#1928#0" expanded="false" />
-            <element signature="e#1968#1969#0" expanded="false" />
-            <element signature="e#2005#2006#0" expanded="false" />
-            <element signature="e#2057#2058#0" expanded="false" />
-            <element signature="e#2101#2102#0" expanded="false" />
-            <element signature="e#2134#2135#0" expanded="false" />
-            <element signature="e#2165#2166#0" expanded="false" />
-            <element signature="e#2211#2212#0" expanded="false" />
-            <element signature="e#2251#2252#0" expanded="false" />
-            <element signature="e#2288#2289#0" expanded="false" />
-            <element signature="e#2321#2322#0" expanded="false" />
-            <element signature="e#2373#2374#0" expanded="false" />
-            <element signature="e#2417#2418#0" expanded="false" />
-            <element signature="e#2460#2461#0" expanded="false" />
-            <element signature="e#2492#2493#0" expanded="false" />
-            <element signature="e#2547#2548#0" expanded="false" />
-            <element signature="e#2587#2588#0" expanded="false" />
-            <element signature="e#2629#2630#0" expanded="false" />
-            <element signature="e#2660#2661#0" expanded="false" />
-            <element signature="e#2715#2716#0" expanded="false" />
-            <element signature="e#2755#2756#0" expanded="false" />
-            <element signature="e#2798#2799#0" expanded="false" />
-            <element signature="e#2830#2831#0" expanded="false" />
-            <element signature="e#2889#2890#0" expanded="false" />
-            <element signature="e#2933#2934#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -2202,9 +2001,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-253">
           <caret line="14" column="22" lean-forward="true" selection-start-line="14" selection-start-column="22" selection-end-line="14" selection-end-column="22" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -2212,9 +2008,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1740">
           <caret line="130" column="0" lean-forward="false" selection-start-line="130" selection-start-column="0" selection-end-line="130" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -2229,7 +2022,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="180">
           <caret line="12" column="11" lean-forward="false" selection-start-line="12" selection-start-column="11" selection-end-line="12" selection-end-column="11" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2237,7 +2029,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="345">
           <caret line="25" column="41" lean-forward="false" selection-start-line="25" selection-start-column="41" selection-end-line="25" selection-end-column="41" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2245,7 +2036,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="32">
           <caret line="24" column="66" lean-forward="false" selection-start-line="24" selection-start-column="66" selection-end-line="24" selection-end-column="66" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2253,7 +2043,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="144">
           <caret line="430" column="9" lean-forward="false" selection-start-line="430" selection-start-column="9" selection-end-line="430" selection-end-column="9" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2261,10 +2050,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="54">
           <caret line="18" column="0" lean-forward="true" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
-          <folding>
-            <element signature="e#1230#1231#0" expanded="false" />
-            <element signature="e#1259#1260#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -2272,9 +2057,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="467">
           <caret line="46" column="0" lean-forward="false" selection-start-line="46" selection-start-column="0" selection-end-line="46" selection-end-column="0" />
-          <folding>
-            <element signature="e#990#991#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -2282,17 +2064,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="162">
           <caret line="20" column="19" lean-forward="false" selection-start-line="20" selection-start-column="16" selection-end-line="20" selection-end-column="19" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/mingchu/ruolan/push/service/MessageService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="22" column="0" lean-forward="true" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -2300,7 +2071,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="75">
           <caret line="5" column="35" lean-forward="false" selection-start-line="5" selection-start-column="35" selection-end-line="5" selection-end-column="35" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2308,18 +2078,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="255">
           <caret line="20" column="10" lean-forward="false" selection-start-line="20" selection-start-column="10" selection-end-line="20" selection-end-column="10" />
-          <folding>
-            <element signature="e#445#446#0" expanded="false" />
-            <element signature="e#510#511#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/mingchu/ruolan/push/bean/api/message/MessageCreateModel.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="14" column="11" lean-forward="true" selection-start-line="14" selection-start-column="2" selection-end-line="14" selection-end-column="11" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2327,7 +2085,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="446">
           <caret line="154" column="10" lean-forward="false" selection-start-line="154" selection-start-column="10" selection-end-line="154" selection-end-column="10" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2335,10 +2092,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="90">
           <caret line="12" column="3" lean-forward="true" selection-start-line="12" selection-start-column="3" selection-end-line="12" selection-end-column="3" />
-          <folding>
-            <element signature="e#2863#2864#0" expanded="false" />
-            <element signature="e#2893#2894#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -2346,7 +2099,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-231">
           <caret line="8" column="13" lean-forward="false" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2354,21 +2106,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="218">
           <caret line="109" column="39" lean-forward="false" selection-start-line="109" selection-start-column="39" selection-end-line="109" selection-end-column="39" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/mingchu/ruolan/push/bean/api/group/GroupMemberAddModel.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="18" column="75" lean-forward="false" selection-start-line="18" selection-start-column="75" selection-end-line="18" selection-end-column="75" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#489#490#0" expanded="true" />
-            <element signature="e#517#518#0" expanded="true" />
-            <element signature="e#564#565#0" expanded="true" />
-            <element signature="e#598#599#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -2376,87 +2113,292 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="300">
           <caret line="131" column="13" lean-forward="true" selection-start-line="131" selection-start-column="13" selection-end-line="131" selection-end-column="13" />
-          <folding>
-            <element signature="e#3257#3258#0" expanded="true" />
-            <element signature="e#3284#3285#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/mingchu/ruolan/push/bean/db/User.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-26">
-          <caret line="20" column="13" lean-forward="false" selection-start-line="20" selection-start-column="13" selection-end-line="20" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/mingchu/ruolan/push/factory/UserFactory.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="202">
-          <caret line="118" column="35" lean-forward="false" selection-start-line="118" selection-start-column="35" selection-end-line="118" selection-end-column="35" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/mingchu/ruolan/push/bean/card/UserCard.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="434">
+        <state relative-caret-position="915">
           <caret line="66" column="45" lean-forward="false" selection-start-line="66" selection-start-column="45" selection-end-line="66" selection-end-column="45" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/mingchu/ruolan/push/service/UserService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="202">
+        <state relative-caret-position="1380">
           <caret line="105" column="28" lean-forward="false" selection-start-line="105" selection-start-column="28" selection-end-line="105" selection-end-column="28" />
-          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/mingchu/ruolan/push/bean/api/group/GroupCreateModel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="25" column="29" lean-forward="false" selection-start-line="25" selection-start-column="24" selection-end-line="25" selection-end-column="29" />
+          <folding>
+            <element signature="imports" expanded="false" />
+            <element signature="e#802#803#0" expanded="false" />
+            <element signature="e#829#830#0" expanded="false" />
+            <element signature="e#869#870#0" expanded="false" />
+            <element signature="e#901#902#0" expanded="false" />
+            <element signature="e#932#933#0" expanded="false" />
+            <element signature="e#959#960#0" expanded="false" />
+            <element signature="e#999#1000#0" expanded="false" />
+            <element signature="e#1031#1032#0" expanded="false" />
+            <element signature="e#1065#1066#0" expanded="false" />
+            <element signature="e#1095#1096#0" expanded="false" />
+            <element signature="e#1141#1142#0" expanded="false" />
+            <element signature="e#1179#1180#0" expanded="false" />
+            <element signature="e#1216#1217#0" expanded="false" />
+            <element signature="e#1244#1245#0" expanded="false" />
+            <element signature="e#1291#1292#0" expanded="false" />
+            <element signature="e#1325#1326#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/mingchu/ruolan/push/bean/api/group/GroupMemberAddModel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="27" column="5" lean-forward="false" selection-start-line="13" selection-start-column="0" selection-end-line="27" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="false" />
+            <element signature="e#489#490#0" expanded="false" />
+            <element signature="e#517#518#0" expanded="false" />
+            <element signature="e#564#565#0" expanded="false" />
+            <element signature="e#598#599#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/mingchu/ruolan/push/factory/PushFactory.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="142">
-          <caret line="198" column="27" lean-forward="true" selection-start-line="198" selection-start-column="27" selection-end-line="198" selection-end-column="27" />
-          <folding />
+          <caret line="198" column="27" lean-forward="false" selection-start-line="198" selection-start-column="27" selection-end-line="198" selection-end-column="27" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/mingchu/ruolan/push/bean/api/group/GroupCreateModel.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/mingchu/ruolan/push/factory/UserFactory.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="282">
-          <caret line="25" column="29" lean-forward="false" selection-start-line="25" selection-start-column="24" selection-end-line="25" selection-end-column="29" />
+        <state relative-caret-position="1605">
+          <caret line="118" column="35" lean-forward="false" selection-start-line="118" selection-start-column="35" selection-end-line="118" selection-end-column="35" />
           <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/mingchu/ruolan/push/service/GroupService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="174">
-          <caret line="305" column="59" lean-forward="false" selection-start-line="305" selection-start-column="59" selection-end-line="305" selection-end-column="59" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/mingchu/ruolan/push/factory/GroupFactory.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="337">
-          <caret line="202" column="0" lean-forward="false" selection-start-line="202" selection-start-column="0" selection-end-line="202" selection-end-column="0" />
-          <folding>
-            <element signature="e#1298#1328#1" expanded="true" />
+            <element signature="imports" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/mingchu/ruolan/push/bean/card/GroupMemberCard.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="227">
-          <caret line="28" column="47" lean-forward="true" selection-start-line="28" selection-start-column="47" selection-end-line="28" selection-end-column="47" />
+        <state relative-caret-position="390">
+          <caret line="29" column="49" lean-forward="false" selection-start-line="29" selection-start-column="49" selection-end-line="29" selection-end-column="49" />
+          <folding>
+            <element signature="imports" expanded="false" />
+            <element signature="e#966#967#0" expanded="false" />
+            <element signature="e#991#992#0" expanded="false" />
+            <element signature="e#1027#1028#0" expanded="false" />
+            <element signature="e#1055#1056#0" expanded="false" />
+            <element signature="e#1087#1088#0" expanded="false" />
+            <element signature="e#1115#1116#0" expanded="false" />
+            <element signature="e#1157#1158#0" expanded="false" />
+            <element signature="e#1191#1192#0" expanded="false" />
+            <element signature="e#1223#1224#0" expanded="false" />
+            <element signature="e#1253#1254#0" expanded="false" />
+            <element signature="e#1296#1297#0" expanded="false" />
+            <element signature="e#1327#1328#0" expanded="false" />
+            <element signature="e#1359#1360#0" expanded="false" />
+            <element signature="e#1389#1390#0" expanded="false" />
+            <element signature="e#1432#1433#0" expanded="false" />
+            <element signature="e#1463#1464#0" expanded="false" />
+            <element signature="e#1496#1497#0" expanded="false" />
+            <element signature="e#1525#1526#0" expanded="false" />
+            <element signature="e#1569#1570#0" expanded="false" />
+            <element signature="e#1605#1606#0" expanded="false" />
+            <element signature="e#1639#1640#0" expanded="false" />
+            <element signature="e#1669#1670#0" expanded="false" />
+            <element signature="e#1715#1716#0" expanded="false" />
+            <element signature="e#1753#1754#0" expanded="false" />
+            <element signature="e#1795#1796#0" expanded="false" />
+            <element signature="e#1826#1827#0" expanded="false" />
+            <element signature="e#1881#1882#0" expanded="false" />
+            <element signature="e#1921#1922#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/mingchu/ruolan/push/service/GroupService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="570">
+          <caret line="60" column="34" lean-forward="false" selection-start-line="60" selection-start-column="34" selection-end-line="60" selection-end-column="34" />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/mingchu/ruolan/push/factory/GroupFactory.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1695">
+          <caret line="123" column="15" lean-forward="false" selection-start-line="123" selection-start-column="15" selection-end-line="123" selection-end-column="15" />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/hibernate.cfg.xml">
+      <provider editor-type-id="JavaFX-Scene-Builder">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="18" column="19" lean-forward="false" selection-start-line="18" selection-start-column="19" selection-end-line="18" selection-end-column="19" />
+          <folding>
+            <element signature="e#740#745#0" expanded="false" />
+            <element signature="e#760#765#0" expanded="false" />
+            <element signature="e#787#792#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/mingchu/ruolan/push/bean/db/Apply.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="30" column="26" lean-forward="false" selection-start-line="30" selection-start-column="26" selection-end-line="30" selection-end-column="26" />
+          <folding>
+            <element signature="imports" expanded="false" />
+            <element signature="e#1847#1848#0" expanded="false" />
+            <element signature="e#1872#1873#0" expanded="false" />
+            <element signature="e#1908#1909#0" expanded="false" />
+            <element signature="e#1936#1937#0" expanded="false" />
+            <element signature="e#1974#1975#0" expanded="false" />
+            <element signature="e#2008#2009#0" expanded="false" />
+            <element signature="e#2062#2063#0" expanded="false" />
+            <element signature="e#2108#2109#0" expanded="false" />
+            <element signature="e#2141#2142#0" expanded="false" />
+            <element signature="e#2170#2171#0" expanded="false" />
+            <element signature="e#2214#2215#0" expanded="false" />
+            <element signature="e#2250#2251#0" expanded="false" />
+            <element signature="e#2278#2279#0" expanded="false" />
+            <element signature="e#2305#2306#0" expanded="false" />
+            <element signature="e#2342#2343#0" expanded="false" />
+            <element signature="e#2374#2375#0" expanded="false" />
+            <element signature="e#2409#2410#0" expanded="false" />
+            <element signature="e#2440#2441#0" expanded="false" />
+            <element signature="e#2488#2489#0" expanded="false" />
+            <element signature="e#2528#2529#0" expanded="false" />
+            <element signature="e#2562#2563#0" expanded="false" />
+            <element signature="e#2594#2595#0" expanded="false" />
+            <element signature="e#2642#2643#0" expanded="false" />
+            <element signature="e#2684#2685#0" expanded="false" />
+            <element signature="e#2722#2723#0" expanded="false" />
+            <element signature="e#2756#2757#0" expanded="false" />
+            <element signature="e#2810#2811#0" expanded="false" />
+            <element signature="e#2856#2857#0" expanded="false" />
+            <element signature="e#2899#2900#0" expanded="false" />
+            <element signature="e#2931#2932#0" expanded="false" />
+            <element signature="e#2988#2989#0" expanded="false" />
+            <element signature="e#3030#3031#0" expanded="false" />
+            <element signature="e#3073#3074#0" expanded="false" />
+            <element signature="e#3105#3106#0" expanded="false" />
+            <element signature="e#3162#3163#0" expanded="false" />
+            <element signature="e#3204#3205#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/mingchu/ruolan/push/bean/db/User.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="20" column="13" lean-forward="false" selection-start-line="20" selection-start-column="13" selection-end-line="20" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="false" />
+            <element signature="e#2943#2944#0" expanded="false" />
+            <element signature="e#2968#2969#0" expanded="false" />
+            <element signature="e#3004#3005#0" expanded="false" />
+            <element signature="e#3032#3033#0" expanded="false" />
+            <element signature="e#3063#3064#0" expanded="false" />
+            <element signature="e#3090#3091#0" expanded="false" />
+            <element signature="e#3130#3131#0" expanded="false" />
+            <element signature="e#3162#3163#0" expanded="false" />
+            <element signature="e#3194#3195#0" expanded="false" />
+            <element signature="e#3222#3223#0" expanded="false" />
+            <element signature="e#3264#3265#0" expanded="false" />
+            <element signature="e#3298#3299#0" expanded="false" />
+            <element signature="e#3333#3334#0" expanded="false" />
+            <element signature="e#3364#3365#0" expanded="false" />
+            <element signature="e#3412#3413#0" expanded="false" />
+            <element signature="e#3452#3453#0" expanded="false" />
+            <element signature="e#3487#3488#0" expanded="false" />
+            <element signature="e#3518#3519#0" expanded="false" />
+            <element signature="e#3566#3567#0" expanded="false" />
+            <element signature="e#3606#3607#0" expanded="false" />
+            <element signature="e#3644#3645#0" expanded="false" />
+            <element signature="e#3678#3679#0" expanded="false" />
+            <element signature="e#3732#3733#0" expanded="false" />
+            <element signature="e#3778#3779#0" expanded="false" />
+            <element signature="e#3805#3806#0" expanded="false" />
+            <element signature="e#3831#3832#0" expanded="false" />
+            <element signature="e#3866#3867#0" expanded="false" />
+            <element signature="e#3896#3897#0" expanded="false" />
+            <element signature="e#3928#3929#0" expanded="false" />
+            <element signature="e#3956#3957#0" expanded="false" />
+            <element signature="e#3998#3999#0" expanded="false" />
+            <element signature="e#4032#4033#0" expanded="false" />
+            <element signature="e#4065#4066#0" expanded="false" />
+            <element signature="e#4094#4095#0" expanded="false" />
+            <element signature="e#4138#4139#0" expanded="false" />
+            <element signature="e#4174#4175#0" expanded="false" />
+            <element signature="e#4216#4217#0" expanded="false" />
+            <element signature="e#4247#4248#0" expanded="false" />
+            <element signature="e#4302#4303#0" expanded="false" />
+            <element signature="e#4342#4343#0" expanded="false" />
+            <element signature="e#4384#4385#0" expanded="false" />
+            <element signature="e#4415#4416#0" expanded="false" />
+            <element signature="e#4470#4471#0" expanded="false" />
+            <element signature="e#4510#4511#0" expanded="false" />
+            <element signature="e#4557#4558#0" expanded="false" />
+            <element signature="e#4593#4594#0" expanded="false" />
+            <element signature="e#4658#4659#0" expanded="false" />
+            <element signature="e#4708#4709#0" expanded="false" />
+            <element signature="e#4754#4755#0" expanded="false" />
+            <element signature="e#4786#4787#0" expanded="false" />
+            <element signature="e#4845#4846#0" expanded="false" />
+            <element signature="e#4887#4888#0" expanded="false" />
+            <element signature="e#4932#4933#0" expanded="false" />
+            <element signature="e#4964#4965#0" expanded="false" />
+            <element signature="e#5023#5024#0" expanded="false" />
+            <element signature="e#5065#5066#0" expanded="false" />
+            <element signature="e#5102#5103#0" expanded="false" />
+            <element signature="e#5131#5132#0" expanded="false" />
+            <element signature="e#5179#5180#0" expanded="false" />
+            <element signature="e#5215#5216#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/build.gradle">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="318">
+          <caret line="28" column="66" lean-forward="false" selection-start-line="28" selection-start-column="66" selection-end-line="28" selection-end-column="66" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/mingchu/ruolan/push/bean/api/message/MessageCreateModel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="77">
+          <caret line="22" column="11" lean-forward="true" selection-start-line="22" selection-start-column="11" selection-end-line="22" selection-end-column="11" />
+          <folding>
+            <element signature="e#1963#1964#0" expanded="true" />
+            <element signature="e#1998#1999#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/mingchu/ruolan/push/service/MessageService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="162">
+          <caret line="37" column="16" lean-forward="true" selection-start-line="37" selection-start-column="16" selection-end-line="37" selection-end-column="16" />
           <folding />
         </state>
       </provider>
