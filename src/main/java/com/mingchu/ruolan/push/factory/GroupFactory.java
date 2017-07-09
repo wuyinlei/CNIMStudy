@@ -6,6 +6,7 @@ import com.mingchu.ruolan.push.bean.db.Group;
 import com.mingchu.ruolan.push.bean.db.GroupMember;
 import com.mingchu.ruolan.push.bean.db.User;
 import com.mingchu.ruolan.push.utils.Hib;
+import org.hibernate.Hibernate;
 
 import java.util.HashSet;
 import java.util.List;
@@ -165,16 +166,13 @@ public class GroupFactory {
      * @param self User
      * @return Set<GroupMember>
      */
-    public static Set<GroupMember> getMembers(User self) {
+    public static Set<GroupMember> getMembers(User user) {
 
         return Hib.query(session -> {
-                    List<GroupMember> members = session.createQuery("from GroupMember where userId =:userId")
-                            .setParameter("userId", self.getId())
-                            .list();
-
-                    return new HashSet<>(members);
-                }
-        );
+            session.load(user, user.getId());
+            Hibernate.initialize(user.getGroupMembers());
+            return user.getGroupMembers();
+        });
     }
 
     /**

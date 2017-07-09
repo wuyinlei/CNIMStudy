@@ -89,6 +89,11 @@ public class User implements Principal {
     @JoinColumn(name = "receiverId")
     private Set<PushHistory> receivePushHistories = new HashSet<>();
 
+    // 我的所有群身份
+    @OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    @JoinColumn(name = "userId")
+    private Set<GroupMember> groupMembers = new HashSet<>();
+
 
     public String getId() {
         return id;
@@ -209,5 +214,13 @@ public class User implements Principal {
 
     public void setGroups(Set<Group> groups) {
         this.groups = groups;
+    }
+
+    public Set<GroupMember> getGroupMembers() {
+        return groupMembers;
+    }
+
+    public void setGroupMembers(Set<GroupMember> groupMembers) {
+        this.groupMembers = groupMembers;
     }
 }
